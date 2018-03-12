@@ -24,6 +24,12 @@
     <ClInclude Include="Passager.h" />
     <ClInclude Include="Train.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Gare.cpp" />
+    <ClCompile Include="Ligne.cpp" />
+    <ClCompile Include="Passager.cpp" />
+    <ClCompile Include="Train.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{FE2D4457-1C2E-4C6C-ADFA-78CF6463D524}</ProjectGuid>

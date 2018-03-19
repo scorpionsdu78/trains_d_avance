@@ -27,6 +27,7 @@
   <ItemGroup>
     <ClCompile Include="Gare.cpp" />
     <ClCompile Include="Ligne.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Passager.cpp" />
     <ClCompile Include="Train.cpp" />
   </ItemGroup>

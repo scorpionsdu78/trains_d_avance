@@ -1,5 +1,8 @@
 #include <iostream>
 
+#include "Gare.h"
+#include "Ligne.h"
+
 using namespace std;
 
 int main()

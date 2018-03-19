@@ -7,7 +7,7 @@
 #include"Train.h"
 
 class Gare;
-class Train;
+
 
 class Ligne
 {

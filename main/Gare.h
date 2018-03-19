@@ -4,16 +4,15 @@
 
 #include<string>
 #include<vector>
-#include<utility>
 
-#include "Ligne.h"
+
 
 class Ligne;
 
 class Gare
 {
 public:
-    Gare(std::string _nom, std::vector<Ligne*> _lignes, std::pair<int,int> _coord);
+    Gare(std::string _nom, std::vector<Ligne*> _lignes, std::pair<int,int> _coords);
 	~Gare();
 
 private:

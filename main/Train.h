@@ -5,11 +5,15 @@
 #include "Gare.h"
 #include "Ligne.h"
 
+class Gare;
+class Ligne;
+
 class Train
 {
 public:
 	Train();
 	~Train();
+
 
 private:
 
@@ -17,7 +21,7 @@ private:
 
 	Gare* position;
 
-	Ligne ligne;
+	Ligne* lignes;
 
 
 

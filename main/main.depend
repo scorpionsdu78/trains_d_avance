@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1521472108 source:d:\francois-home\documents\github\trains_d_avance\project1\main\gare.cpp
+	"Gare.h"
+
+1521472521 d:\francois-home\documents\github\trains_d_avance\project1\main\gare.h
+
+1521472108 source:d:\francois-home\documents\github\trains_d_avance\project1\main\ligne.cpp
+	"Ligne.h"
+
+1521472108 d:\francois-home\documents\github\trains_d_avance\project1\main\ligne.h
+
+1446667744 source:d:\francois-home\documents\github\trains_d_avance\project1\main\main.cpp
+	<iostream>
+
+1521472837 source:d:\francois-home\documents\github\trains_d_avance\project1\main\passager.cpp
+	"Passager.h"
+
+1521472837 d:\francois-home\documents\github\trains_d_avance\project1\main\passager.h
+
+1521471999 source:d:\francois-home\documents\github\trains_d_avance\project1\main\train.cpp
+	"Train.h"
+
+1521472521 d:\francois-home\documents\github\trains_d_avance\project1\main\train.h
+	"Gare.h"
+	"Ligne.h"
+

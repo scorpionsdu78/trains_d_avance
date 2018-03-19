@@ -5,7 +5,23 @@
 
 
 
+class Passager
+{
+public:
+	Passager();
+	~Passager();
 
+private:
+
+};
+
+Passager::Passager()
+{
+}
+
+Passager::~Passager()
+{
+}
 
 
 

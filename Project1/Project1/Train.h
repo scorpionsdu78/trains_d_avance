@@ -3,6 +3,15 @@
 #define TRAIN_H_INCLUDED
 
 
+class Train
+{
+public:
+	Train();
+	~Train();
+
+private:
+
+};
 
 
 

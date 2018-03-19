@@ -4,7 +4,15 @@
 
 
 
+class Ligne
+{
+public:
+	Ligne();
+	~Ligne();
 
+private:
+
+};
 
 
 

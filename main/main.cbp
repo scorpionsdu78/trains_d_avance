@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Gare.cpp" />
+		<Unit filename="Gare.h" />
+		<Unit filename="Ligne.cpp" />
+		<Unit filename="Ligne.h" />
+		<Unit filename="Passager.cpp" />
+		<Unit filename="Passager.h" />
+		<Unit filename="Train.cpp" />
+		<Unit filename="Train.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

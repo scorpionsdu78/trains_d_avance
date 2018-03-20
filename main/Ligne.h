@@ -14,6 +14,7 @@ class Ligne
 public:
 	Ligne(int _id, std::vector<Gare*> _stations, std::vector<Train> _trains);
 	~Ligne();
+	void actualiser_trains();
 
 private:
 

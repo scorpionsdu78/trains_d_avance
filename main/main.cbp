@@ -36,6 +36,8 @@
 		<Unit filename="Gare.h" />
 		<Unit filename="Ligne.cpp" />
 		<Unit filename="Ligne.h" />
+		<Unit filename="Metro.cpp" />
+		<Unit filename="Metro.h" />
 		<Unit filename="Passager.cpp" />
 		<Unit filename="Passager.h" />
 		<Unit filename="Train.cpp" />

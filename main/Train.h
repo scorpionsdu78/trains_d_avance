@@ -12,6 +12,10 @@ class Train
 public:
 	Train();
 	~Train();
+	int donner_voyageur();
+	void recuperer_voyageur(Gare* gr);
+	void actualiser_position();
+
 
 
 private:
@@ -21,6 +25,8 @@ private:
 	Gare* position;
 
 	Ligne* lignes;
+
+	std::pair<int,int> positions;
 
 
 

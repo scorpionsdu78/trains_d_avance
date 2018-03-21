@@ -13,13 +13,14 @@ class Train;
 class Gare
 {
 public:
-    Gare(std::string _nom, std::vector<Ligne*> _lignes, std::pair<int,int> _coords);
+    Gare(std::string _nom, std::pair<int,int> _coords);
 	~Gare();
 	void recuperer_voyageur(int nombre);
 	int donner_voyageur(Train* tr);
 	int nb_voyageur();
 	void liberer_voyageur();
 	void nouv_voyageur();
+	void presentation() const;
 
 
 private:

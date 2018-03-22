@@ -12,8 +12,8 @@ class Metro
     private:
         std::vector<Gare*> stations;
         std::vector<Ligne*> lignes;
-        void lire_gare(std::ifstream file);
-        void lire_ligne(std::ifstream file, int i);
+        void lire_gare(std::ifstream& file);
+        void lire_ligne(std::ifstream& file, int i);
         Gare* new_gare(std::string data);
 
 

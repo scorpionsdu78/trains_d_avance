@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <utility>
 #include <string>
+#include "Gare.h"
 
 using namespace std;
 
@@ -29,30 +30,13 @@ Metro::Metro(const char* file)
 
 }
 
-void Metro::lire_gare(std::ifstream file)
+void Metro::lire_gare(std::ifstream& file)
 {
         string ligne;
         Gare* gare = NULL;
-        /*int j=0;
-
-
-        while(getline(fichier, ligne))
-        {
-            if(ligne)
-            {
-                j=ligne.size();
-
-                for()
-
-            }
-
-        }*/
-
-        ligne=getline(file, ligne);
-
+        getline(file, ligne);
         gare = new_gare(ligne);
-
-        gare->presentation();
+        stations.push_back(gare);
 }
 
 Gare* Metro::new_gare(string data)
@@ -64,8 +48,8 @@ Gare* Metro::new_gare(string data)
     string nom="";
     string x="";
     string y="";
-
-    for(int i=0; i<taille && data[i]!=' '; i++)
+	int i = 0;
+    for(; i<taille && data[i]!=' '; i++)
     {
         nom+=data[i];
     }
@@ -90,6 +74,6 @@ Gare* Metro::new_gare(string data)
     coord.second = stoi(y);
 
     Gare* n_gare = new Gare(nom,coord);
-
+	return n_gare;
 }
 

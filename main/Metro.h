@@ -24,4 +24,8 @@ class Metro
 
 };
 
+int to_int(std::string a);
+
+void test();
+
 #endif // METRO_H_INCLUDED

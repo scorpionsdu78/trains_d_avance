@@ -24,44 +24,49 @@
 	"Gare.h"
 	"Ligne.h"
 
-1521628953 source:d:\francois-home\documents\github\trains_d_avance\main\gare.cpp
+1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\gare.cpp
 	"Gare.h"
+	<iostream>
 
-1521532478 d:\francois-home\documents\github\trains_d_avance\main\gare.h
+1521712889 d:\francois-home\documents\github\trains_d_avance\main\gare.h
 	<string>
 	<vector>
 
-1521482154 source:d:\francois-home\documents\github\trains_d_avance\main\ligne.cpp
+1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\ligne.cpp
 	"Ligne.h"
 
-1521532698 d:\francois-home\documents\github\trains_d_avance\main\ligne.h
+1521712889 d:\francois-home\documents\github\trains_d_avance\main\ligne.h
 	<vector>
 	"Train.h"
 
-1521629246 source:d:\francois-home\documents\github\trains_d_avance\main\main.cpp
+1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\main.cpp
 	<iostream>
 	"Gare.h"
 	"Ligne.h"
 	"Metro.h"
 
-1521482154 source:d:\francois-home\documents\github\trains_d_avance\main\passager.cpp
+1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\passager.cpp
 	"Passager.h"
 
-1521472837 d:\francois-home\documents\github\trains_d_avance\main\passager.h
+1521712889 d:\francois-home\documents\github\trains_d_avance\main\passager.h
 
-1521471999 source:d:\francois-home\documents\github\trains_d_avance\main\train.cpp
+1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\train.cpp
 	"Train.h"
 
-1521629074 d:\francois-home\documents\github\trains_d_avance\main\train.h
+1521712889 d:\francois-home\documents\github\trains_d_avance\main\train.h
 	<utility>
 
-1521629280 source:d:\francois-home\documents\github\trains_d_avance\main\metro.cpp
+1521715545 source:d:\francois-home\documents\github\trains_d_avance\main\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>
 	<cstdlib>
+	<utility>
+	<string>
+	<sstream>
+	"Gare.h"
 
-1521629369 d:\francois-home\documents\github\trains_d_avance\main\metro.h
+1521715525 d:\francois-home\documents\github\trains_d_avance\main\metro.h
 	<vector>
 	<string>
 

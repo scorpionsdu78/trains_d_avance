@@ -28,9 +28,10 @@
 	"Gare.h"
 	<iostream>
 
-1521712889 d:\francois-home\documents\github\trains_d_avance\main\gare.h
+1521801156 d:\francois-home\documents\github\trains_d_avance\main\gare.h
 	<string>
 	<vector>
+	"Train.h"
 
 1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\ligne.cpp
 	"Ligne.h"
@@ -53,10 +54,12 @@
 1521712889 source:d:\francois-home\documents\github\trains_d_avance\main\train.cpp
 	"Train.h"
 
-1521712889 d:\francois-home\documents\github\trains_d_avance\main\train.h
+1521801657 d:\francois-home\documents\github\trains_d_avance\main\train.h
 	<utility>
+	<cstdlib>
+	"Gare.h"
 
-1521798036 source:d:\francois-home\documents\github\trains_d_avance\main\metro.cpp
+1521798991 source:d:\francois-home\documents\github\trains_d_avance\main\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>

@@ -5,6 +5,7 @@
 #include<string>
 #include<vector>
 
+#include"Train.h"
 
 
 class Ligne;
@@ -21,6 +22,7 @@ public:
 	void liberer_voyageur();
 	void nouv_voyageur();
 	void presentation() const;
+	int ping_freq() const;
 
 
 private:
@@ -29,6 +31,7 @@ private:
     std::vector<Ligne*> lignes;
 
     std::pair<int,int> coords;
+    int freq;
 
 
 

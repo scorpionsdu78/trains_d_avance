@@ -16,6 +16,13 @@ Metro::Metro(const char* file)
 
     if(plans)
     {
+
+        string info;
+
+        int n;
+
+        getline(plans, info);
+
         lire_gare(plans);
 
     }
@@ -34,10 +41,14 @@ Metro::Metro(const char* file)
 void Metro::lire_gare(std::ifstream& file)
 {
         string ligne;
+
+
+
         Gare* gare = NULL;
         getline(file, ligne);
         gare = new_gare(ligne);
         stations.push_back(gare);
+        gare->presentation();
 
 }
 

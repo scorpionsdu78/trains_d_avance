@@ -1,0 +1,49 @@
+1. Je vous conseille de laisser le dossier "SFML-2.4.2" à sa place
+
+2. Ouvrez le projet "SFMLmain.cbp"
+
+3. Dans la barre des tâches tout en haut, cliquez sur Project -> Build options...
+
+4. A gauche vous avez 3 parties : SFMLmain, Debug et Release, assurez-vous d'avoir bien 
+sélectionné SFMLmain puis
+
+5. Cliquez sur l'onglet Search directories -> Compiler
+
+6. Cliquez sur Add puis sur le petit dossier avec une flèche verte (#jesuisuningénieurtavu)
+et sélectionnez le dossier "SFML-2.4.2\include" (Code::Blocks va vous proposer de le mettre
+en chemin relatif ou absolu, faites comme vous le sentez)
+
+7. Cliquez sur l'onglet Search directories -> Linker
+
+8. Cliquez sur Add puis sur le petit dossier avec une flèche verte et sélectionnez le dossier 
+"SFML-2.4.2\lib" (idem, choisissez relatif ou absolu, osef)
+
+9. Cliquez sur Ok (duuuh)
+
+C'est là que ça se complique:
+10. Rouvrez la fenêtre Project -> Build options...
+
+11. Maintenant au lieu de sélectionner SFMLmain, sélectionnez Release
+
+12. Cliquez sur l'onglet Linker settings puis sous la partie Link libraries, cliquez sur Add
+
+13. Ici pas besoin d'aller chercher un fichier, écrivez simplement "sfml-graphics" (sans les 
+guillemets) et cliquez sur Ok
+
+14. Cliquez sur Add à nouveau, et écrivrez "sfml-window" (sans guillemets)
+
+15. Et enfin une dernière fois pour ajouter "sfml-system" (sans guillemets)
+
+ATTENTION !! L'ORDRE ET TRES IMPORTANT ! Si vous mettez par exemple, sfml-window, puis
+sfml-graphics puis sfml-system, le programme ne compilera pas ! Mettez bien donc les 3
+et dans l'ordre donné dans ce guide
+
+16. Sélectionnez maintenant Debug dans la partie à gauche
+
+17. Cliquez sur l'onglet Linker settings puis sous la partie Link libraries, cliquez sur Add
+
+18. Cette fois, ajoutez avec CET ORDRE : sfml-graphics-d, puis sfml-window-d, puis
+sfml-system-d (notez bien qu'ils sont similaires mais ont un "-d" à la fin, pour signifier
+Debug ! C'est très important, n'oubliez pas le "-d" sinon ça va planter
+
+19. FINI ! (Enfin)

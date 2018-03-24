@@ -2,6 +2,7 @@
 
 Train::Train()
 {
+    nb_passager = 80;
 }
 
 Train::~Train()

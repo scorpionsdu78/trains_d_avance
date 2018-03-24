@@ -65,7 +65,7 @@ Metro::Metro(const char* file)
             error_msg("Erreur lecture fichier: s'attend à g");
         }
 
-        lire_gares(plans,stoi(tmp[1]));
+        //lire_gares(plans,stoi(tmp[1]));
 
     }
     else
@@ -110,6 +110,8 @@ Gare* Metro::new_gare(string data)
     {
         error_msg("Erreur lecture fichier: s'attend à 3 param (gare)");
     }
-    pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
-    return new Gare(vect[0],coords);
+    //pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
+    //return new Gare(vect[0],coords);
+
+    return nullptr;
 }

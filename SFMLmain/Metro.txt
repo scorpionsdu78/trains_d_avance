@@ -1,0 +1,18 @@
+g 12
+Carratos 1 14
+Khomm 2 3
+Bogman 10 16
+Arkania 8 13
+Alderaan 8 9
+Nubia 8 5
+Devaran 8 1
+Aquaris 15 15
+Chazwa 12 12
+Fang 5 6
+Borleias 4 11
+Balmorra 12 7
+
+l 3
+1 Bogman Arkania Alderaan Nubia Devaran
+2 Aquaris Chazwa Alderaan Fang Khomm
+3 Carratos Borleias Alderaan Balmorra

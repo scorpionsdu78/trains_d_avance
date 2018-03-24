@@ -1,6 +1,9 @@
 # depslib dependency file v1.0
-1521894150 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
-	<SFML/Graphics.hpp>
+1521891565 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
+	<iostream>
+	"Gare.h"
+	"Ligne.h"
+	"Metro.h"
 
 1521892001 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\sfml-2.4.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -389,4 +392,22 @@
 	<SFML/System/String.hpp>
 	<string>
 	<vector>
+
+1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.h
+	<string>
+	<vector>
+	"Train.h"
+
+1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.h
+	<utility>
+	<cstdlib>
+	"Gare.h"
+
+1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.h
+	<vector>
+	"Train.h"
+
+1521900615 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.h
+	<vector>
+	<string>
 

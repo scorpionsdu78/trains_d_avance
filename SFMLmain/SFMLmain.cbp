@@ -43,6 +43,16 @@
 		<Linker>
 			<Add directory="SFML-2.4.2/lib" />
 		</Linker>
+		<Unit filename="Gare.cpp" />
+		<Unit filename="Gare.h" />
+		<Unit filename="Ligne.cpp" />
+		<Unit filename="Ligne.h" />
+		<Unit filename="Metro.cpp" />
+		<Unit filename="Metro.h" />
+		<Unit filename="Passager.cpp" />
+		<Unit filename="Passager.h" />
+		<Unit filename="Train.cpp" />
+		<Unit filename="Train.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

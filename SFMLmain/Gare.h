@@ -13,6 +13,7 @@ class Train;
 
 class Gare
 {
+        friend Gare* find_stations(const std::vector<Gare*> &gares, std::string name);
 public:
     Gare(std::string _nom, std::pair<int,int> _coords);
 	~Gare();
@@ -29,7 +30,6 @@ private:
     std::string nom;
     int voyageurs;
     std::vector<Ligne*> lignes;
-
     std::pair<int,int> coords;
     int freq;
 

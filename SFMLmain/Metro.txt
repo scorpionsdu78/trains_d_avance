@@ -13,6 +13,6 @@ Borleias 4 11
 Balmorra 12 7
 
 l 3
-1 Bogman Arkania Alderaan Nubia Devaran
-2 Aquaris Chazwa Alderaan Fang Khomm
-3 Carratos Borleias Alderaan Balmorra
+1 5 Bogman Arkania Alderaan Nubia Devaran
+2 7 Aquaris Chazwa Alderaan Fang Khomm
+3 6 Carratos Borleias Alderaan Balmorra

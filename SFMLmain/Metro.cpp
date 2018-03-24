@@ -21,6 +21,8 @@ int stoi(string str)
     int res = 0;
     for(size_t i = 0; i < str.size(); i++)
     {
+        if(str[i] < '0' || str[i] > '9')
+            error_msg("Erreur stoi: non compris entre 0 et 9");
         res *= 10;
         res += str[i] - '0';
     }
@@ -49,6 +51,7 @@ vector<string> split(string str, char c)
 }
 
 
+
 Metro::Metro(const char* file)
 {
     ifstream plans(file,ios::in);
@@ -59,13 +62,23 @@ Metro::Metro(const char* file)
         getline(plans, info);
         tmp = split(info,' ');
 
-        cout << tmp.size() << endl;
         if(tmp.size() != 2 && tmp[0] != "g")
         {
             error_msg("Erreur lecture fichier: s'attend à g");
         }
 
         lire_gares(plans,stoi(tmp[1]));
+
+        getline(plans,info);
+        getline(plans, info);
+        tmp = split(info,' ');
+
+        if(tmp.size() != 2 && tmp[0] != "l")
+        {
+            error_msg("Erreur lecture fichier: s'attend à l");
+        }
+
+        lire_lignes(plans,stoi(tmp[1]));
 
     }
     else
@@ -113,3 +126,42 @@ Gare* Metro::new_gare(string data)
     pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
     return new Gare(vect[0],coords);
 }
+
+void Metro::lire_lignes(std::ifstream& file, int n)
+{
+    string data;
+    Ligne* tmp;
+    for(int i = 0; i < n; i++)
+    {
+        getline(file,data);
+        tmp = new_ligne(data);
+        lignes.push_back(tmp);
+        tmp->presentation();
+    }
+}
+
+Ligne* Metro::new_ligne(string data)
+{
+    vector<string> vect = split(data,' ');
+    int id = stoi(vect[0]);
+    int nb_train = stoi(vect[1]);
+    vector<Train> trains;
+    vector<Gare*> stations_ligne;
+    for(int i = 0; i < nb_train; i++)
+    {
+        trains.push_back(Train());
+    }
+    for(size_t i = 2; i < vect.size(); i++)
+    {
+        cout << i << endl;
+        Gare* tmp = find_stations(stations,vect[i]);
+        if(tmp == nullptr)
+        {
+            error_msg("Train non trouvé lors de la création de ligne. Vérifier fichier.");
+        }
+        stations_ligne.push_back(tmp);
+    }
+    cout << "before return" << endl;
+    return new Ligne(id,stations,trains);
+}
+

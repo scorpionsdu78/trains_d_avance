@@ -3,6 +3,21 @@
 
 using namespace std;
 
+
+Gare* find_stations(const std::vector<Gare*> &gares, std::string name)
+{
+    for(size_t i = 0; i < gares.size(); i++)
+    {
+        if(gares[i]->nom == name)
+        {
+            cout << "find!" << endl;
+            return gares[i];
+        }
+    }
+    return nullptr;
+}
+
+
 Gare::Gare(string _nom, pair<int,int> _coords)
 {
     nom = _nom;

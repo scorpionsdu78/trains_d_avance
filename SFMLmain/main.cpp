@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-
+    cout << "Hello train d'avance !" << endl;
     Metro metro("Metro.txt");
-
+    cout << "Bye train d'avance !" << endl;
     return 0;
 }

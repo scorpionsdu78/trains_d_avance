@@ -6,8 +6,10 @@ using namespace std;
 Gare::Gare(string _nom, pair<int,int> _coords)
 {
     nom = _nom;
-    voyageurs = 0;
+    voyageurs = 20;
     coords = _coords;
+
+    freq = 10;
 
 
 }

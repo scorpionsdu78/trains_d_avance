@@ -1,6 +1,6 @@
 #include "Metro.h"
 #include <fstream>
-#include<iostream>
+#include <iostream>
 #include <cstdlib>
 #include <utility>
 #include <string>
@@ -12,8 +12,8 @@ using namespace std;
 
 void error_msg(string msg)
 {
-        cerr << msg << endl;
-        exit(1);
+    cerr << msg << endl;
+    exit(1);
 }
 
 int nstoi(string str)
@@ -105,15 +105,15 @@ Metro::~Metro()
 
 void Metro::lire_gares(std::ifstream& file, int n)
 {
-        string data;
-        Gare* tmp;
-        for(int i = 0; i < n; i++)
-        {
-            getline(file, data);
-            tmp = new_gare(data);
-            stations.push_back(tmp);
-            tmp->presentation();
-        }
+    string data;
+    Gare* tmp;
+    for(int i = 0; i < n; i++)
+    {
+        getline(file, data);
+        tmp = new_gare(data);
+        stations.push_back(tmp);
+        tmp->presentation();
+    }
 }
 
 Gare* Metro::new_gare(string data)

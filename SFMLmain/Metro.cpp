@@ -169,3 +169,9 @@ void Metro::presentation()
         lignes[i]->presentation();
     }
 }
+
+int Metro::getStationsSize() const
+{
+    return stations.size();
+}
+

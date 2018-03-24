@@ -31,20 +31,23 @@ class Metro
         ~Metro();
         // lister les lignes et leur garres
         void presentation();
-        // lancer la simmulation
+        // lancer la simulation
         void lancer();
+
+        // renvoie la taille du vector de Gare*
+        int getStationsSize() const;
 
 };
 
 // Affiche un message d'erreur et quitte
-void error_msg(string msg);
+void error_msg(std::string msg);
 
 // convertis un string en int
-int nstoi(string str);
+int nstoi(std::string str);
 
 // sépare une chaine str en plusieurs chaines stockées dans un vecteur de string.
 // le séparateur est le char c
-vector<string> split(string str, char c);
+std::vector<std::string> split(std::string str, char c);
 
 
 #endif // METRO_H_INCLUDED

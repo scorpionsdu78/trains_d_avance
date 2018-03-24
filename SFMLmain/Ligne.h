@@ -21,7 +21,7 @@ private:
 
     int id;
 
-    std::vector<Gare*> stations;
+    std::vector<Gare*> stations_lst;
 
     std::vector<Train> trains;
 

@@ -10,7 +10,6 @@ Gare* find_stations(const std::vector<Gare*> &gares, std::string name)
     {
         if(gares[i]->nom == name)
         {
-            cout << "find!" << endl;
             return gares[i];
         }
     }

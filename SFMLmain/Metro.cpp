@@ -136,7 +136,6 @@ void Metro::lire_lignes(std::ifstream& file, int n)
         getline(file,data);
         tmp = new_ligne(data);
         lignes.push_back(tmp);
-        tmp->presentation();
     }
 }
 
@@ -153,7 +152,6 @@ Ligne* Metro::new_ligne(string data)
     }
     for(size_t i = 2; i < vect.size(); i++)
     {
-        cout << i << endl;
         Gare* tmp = find_stations(stations,vect[i]);
         if(tmp == nullptr)
         {
@@ -161,7 +159,13 @@ Ligne* Metro::new_ligne(string data)
         }
         stations_ligne.push_back(tmp);
     }
-    cout << "before return" << endl;
-    return new Ligne(id,stations,trains);
+    return new Ligne(id,stations_ligne,trains);
 }
 
+void Metro::presentation()
+{
+    for(size_t i = 0; i < lignes.size(); i++)
+    {
+        lignes[i]->presentation();
+    }
+}

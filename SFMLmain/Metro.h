@@ -20,6 +20,7 @@ class Metro
     public:
         Metro(const char* file);
         ~Metro();
+        void presentation();
         void lancer();
 
 };

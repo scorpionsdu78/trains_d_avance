@@ -12,14 +12,14 @@ class Metro
     private:
         std::vector<Gare*> stations;
         std::vector<Ligne*> lignes;
-        void lire_gare(std::ifstream& file);
-        void lire_ligne(std::ifstream& file, int i);
+        void lire_gares(std::ifstream& file, int n);
+        void lire_lignes(std::ifstream& file, int n);
         Gare* new_gare(std::string data);
-
+        Ligne* new_ligne(std::string data);
 
     public:
         Metro(const char* file);
-        //~Metro();
+        ~Metro();
         void lancer();
 
 };

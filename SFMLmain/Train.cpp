@@ -1,11 +1,25 @@
 #include "Train.h"
 
+#include <iostream>
+
+using namespace std;
+
 Train::Train()
 {
 }
 
 Train::~Train()
 {
+}
+
+void Train::init_tmp(Gare* origine, pair<int,int> coords)
+{
+    nb_passager = 60;
+
+    position = origine;
+
+    positions = coords;
+
 }
 
 int Train::place_disponible()
@@ -31,9 +45,15 @@ int Train::donner_voyageur(Gare* gr)
 
     frequentation = gr->ping_freq();
 
-    deversement = rand()%frequentation;
+    deversement = rand();
+
+    cout << "deversement1 = " << deversement << endl;
+
+    deversement = deversement % (frequentation - 10) + 10;
 
     don = (nb_passager * deversement)/100;
+
+    cout << "fréquentation= " << frequentation << " deversement = " << deversement << "don= " << don << endl;
 
     nb_passager -= don;
 
@@ -43,9 +63,41 @@ int Train::donner_voyageur(Gare* gr)
 
 void Train::passage_gare(Gare* gr)
 {
-    donner_voyageur(gr);
+    int tmp;
+
+    tmp=donner_voyageur(gr);
 
     recuperer_voyageur(gr);
+
+    gr->recuperer_voyageur(tmp);
 }
 
+void Train::presentation()
+{
+    cout << "j'ai " << nb_passager <<"passager " << endl << endl;
+}
+
+void test1(void)
+{
+    pair<int,int> coords(0,0);
+
+    Gare gr("test",coords);
+
+    Train tr;
+
+    tr.init_tmp(&gr,coords);
+
+    gr.presentation();
+
+    tr.presentation();
+
+    tr.passage_gare(&gr);
+
+
+    gr.presentation();
+
+    tr.presentation();
+
+
+}
 

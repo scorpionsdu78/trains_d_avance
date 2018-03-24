@@ -5,6 +5,7 @@
 #include <utility>
 #include <cstdlib>
 
+
 #include "Gare.h"
 
 class Gare;
@@ -20,7 +21,8 @@ public:
 	void actualiser_position();
 	int place_disponible();
 	void passage_gare(Gare* gr);
-
+	void presentation();
+    void init_tmp(Gare* origine, std::pair<int,int> coords);
 
 
 
@@ -38,11 +40,8 @@ private:
 
 };
 
-/*void test1(void)
-{
+void test1(void);
 
-}
-*/
 
 
 

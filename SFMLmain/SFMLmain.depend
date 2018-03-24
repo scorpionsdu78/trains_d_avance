@@ -462,16 +462,17 @@
 1521898025 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
 
-1521908140 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.cpp
+1521912636 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"
 	<iostream>
 
-1521907179 d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.h
+1521911141 d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.h
 	<string>
 	<vector>
+	<utility>
 	"Train.h"
 
-1521907349 d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.h
+1521911625 d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.h
 	<utility>
 	<cstdlib>
 	"Gare.h"
@@ -484,17 +485,19 @@
 	<vector>
 	"Train.h"
 
-1521908140 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\main.cpp
+1521912490 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\main.cpp
 	<iostream>
+	<ctime>
 	"Gare.h"
 	"Ligne.h"
 	"Metro.h"
+	"Train.h"
 
 1521908140 d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
-1521908667 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.cpp
+1521908787 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>
@@ -510,6 +513,7 @@
 
 1521903743 d:\francois-home\documents\github\trains_d_avance\sfmlmain\passager.h
 
-1521903744 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.cpp
+1521914261 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
+	<iostream>
 

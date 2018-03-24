@@ -78,7 +78,7 @@ Metro::Metro(const char* file)
             error_msg("Erreur lecture fichier: s'attend a l");
         }
 
-        lire_lignes(plans,stoi(tmp[1]));
+        lire_lignes(plans,nstoi(tmp[1]));
 
     }
     else
@@ -142,7 +142,7 @@ void Metro::lire_lignes(std::ifstream& file, int n)
 Ligne* Metro::new_ligne(string data)
 {
     vector<string> vect = split(data,' ');
-    int id = stoi(vect[0]);
+    int id = nstoi(vect[0]);
     int nb_train = nstoi(vect[1]);
     vector<Train> trains;
     vector<Gare*> stations_ligne;

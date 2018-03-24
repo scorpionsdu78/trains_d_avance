@@ -64,10 +64,10 @@ Metro::Metro(const char* file)
 
         if(tmp.size() != 2 && tmp[0] != "g")
         {
-            error_msg("Erreur lecture fichier: s'attend à g");
+            error_msg("Erreur lecture fichier: s'attend a g");
         }
 
-        //lire_gares(plans,stoi(tmp[1]));
+        lire_gares(plans,stoi(tmp[1]));
 
         getline(plans,info);
         getline(plans, info);
@@ -75,7 +75,7 @@ Metro::Metro(const char* file)
 
         if(tmp.size() != 2 && tmp[0] != "l")
         {
-            error_msg("Erreur lecture fichier: s'attend à l");
+            error_msg("Erreur lecture fichier: s'attend a l");
         }
 
         lire_lignes(plans,stoi(tmp[1]));
@@ -123,10 +123,8 @@ Gare* Metro::new_gare(string data)
     {
         error_msg("Erreur lecture fichier: s'attend à 3 param (gare)");
     }
-    //pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
-    //return new Gare(vect[0],coords);
-
-    return nullptr;
+    pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
+    return new Gare(vect[0],coords);
 }
 
 void Metro::lire_lignes(std::ifstream& file, int n)

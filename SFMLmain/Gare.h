@@ -27,6 +27,8 @@ public:
     void presentation() const;
     int ping_freq() const;
 
+    std::pair<int,int> getCoords() const; // simple getter des coords
+
 
 private:
     std::string nom;

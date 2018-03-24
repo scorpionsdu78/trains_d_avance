@@ -175,3 +175,7 @@ int Metro::getStationsSize() const
     return stations.size();
 }
 
+pair<int,int> Metro::getCoordAff(int i) const
+{
+    return stations[i]->getCoords();
+}

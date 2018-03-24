@@ -36,6 +36,8 @@ class Metro
 
         // renvoie la taille du vector de Gare*
         int getStationsSize() const;
+        // renvoie les coordonnées de la Gare à la ième position dans le vector
+        std::pair<int,int> getCoordAff(int i) const;
 
 };
 

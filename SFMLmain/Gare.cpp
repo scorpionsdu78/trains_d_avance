@@ -66,4 +66,7 @@ int Gare::ping_freq() const
     return freq;
 }
 
-
+pair<int,int> Gare::getCoords() const
+{
+    return coords;
+}

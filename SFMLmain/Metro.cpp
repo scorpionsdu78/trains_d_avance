@@ -16,6 +16,17 @@ void error_msg(string msg)
         exit(1);
 }
 
+int stoi(string str)
+{
+    int res = 0;
+    for(size_t i = 0; i < str.size(); i++)
+    {
+        res *= 10;
+        res += str[i] - '0';
+    }
+    return res;
+}
+
 vector<string> split(string str, char c)
 {
     string tmp = "";

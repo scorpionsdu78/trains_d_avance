@@ -16,7 +16,7 @@ void error_msg(string msg)
         exit(1);
 }
 
-int stoi(string str)
+int nstoi(string str)
 {
     int res = 0;
     for(size_t i = 0; i < str.size(); i++)
@@ -67,7 +67,7 @@ Metro::Metro(const char* file)
             error_msg("Erreur lecture fichier: s'attend a g");
         }
 
-        lire_gares(plans,stoi(tmp[1]));
+        lire_gares(plans,nstoi(tmp[1]));
 
         getline(plans,info);
         getline(plans, info);
@@ -123,7 +123,7 @@ Gare* Metro::new_gare(string data)
     {
         error_msg("Erreur lecture fichier: s'attend à 3 param (gare)");
     }
-    pair<int,int> coords = make_pair(stoi(vect[1]),stoi(vect[2]));
+    pair<int,int> coords = make_pair(nstoi(vect[1]),nstoi(vect[2]));
     return new Gare(vect[0],coords);
 }
 
@@ -143,7 +143,7 @@ Ligne* Metro::new_ligne(string data)
 {
     vector<string> vect = split(data,' ');
     int id = stoi(vect[0]);
-    int nb_train = stoi(vect[1]);
+    int nb_train = nstoi(vect[1]);
     vector<Train> trains;
     vector<Gare*> stations_ligne;
     for(int i = 0; i < nb_train; i++)

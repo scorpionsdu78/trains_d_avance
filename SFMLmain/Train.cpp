@@ -5,7 +5,7 @@
 
 using namespace std;
 
-pair<int,float>* equation(Gare* garea, Gare* gareb);
+pair<float,float>* equation(Gare* garea, Gare* gareb);
 float distf(pair<float,float> g_a, pair<float,float> g_b);
 
 Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
@@ -87,34 +87,78 @@ void Train::presentation()
 
 void Train::actualiser_position()
 {
-    int coef;
-    float dist;
-    pair<int,float>* tmp;
-    pair<float,float> old;
+    cout << "entrez actualiser position" << endl;
 
-    tmp = equation(ligne->find_gare(pos_ligne),ligne->find_gare(pos_ligne+1));
+    float coef;
+    float dist;
+    float b;
+    int signe;
+    Gare* gare_a = ligne->find_gare(pos_ligne);
+    Gare* gare_b = ligne->find_gare(pos_ligne+1);
+    pair<float,float>* tmp;
+    pair<float,float> old;
+    pair<float,float> coor_dest;
+
+    gare_a->presentation();
+    gare_b->presentation();
+
+    coor_dest = gare_b->get_coords();
+
+    tmp = equation(gare_a,gare_b);
 
     coef = tmp->first;
     dist = tmp->second;
 
+    b = coords.second - coef * coords.first;
+
+
+    cout << "xb= " << coor_dest.first << "xa" << coords.first << endl;
+
+    if(coor_dest.first - coords.first > 0)
+        signe = 1;
+
+    else if(coor_dest.first - coords.first < 0)
+        signe = 0;
+
+    cout << "coef = " << coef << endl;
+
     while (dist >1)
     {
+        cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
+        cout << "distance= " << dist << endl;
+
         old.first = coords.first;
         old.second = coords.second;
 
-        coords.first = coords.first +1;
-        coords.second = coords.second * coef;
+        if(signe)
+        {
+
+            coords.first = coords.first +1;
+            coords.second = (coords.first * coef) + b;
+        }
+
+        else if(!signe)
+        {
+
+            coords.first = coords.first - 1;
+            coords.second = (coords.first * coef)+b;
+        }
+
+
+        cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
 
         dist -= distf(old,coords);
+
+        cout << "distance= " << dist << endl;
 
     }
 
 
 }
 
-pair<int,float>* equation(Gare* garea, Gare* gareb)
+pair<float,float>* equation(Gare* garea, Gare* gareb)
 {
-    pair<int,float>* r = new pair<int,float>;
+    pair<float,float>* r = new pair<float,float>;
 
     float xa,xb,ya,yb;
 
@@ -126,7 +170,7 @@ pair<int,float>* equation(Gare* garea, Gare* gareb)
     xb=g_b.first;
     yb=g_b.second;
 
-    r->first = (xb-xa)/(yb-ya);
+    r->first = (yb-ya)/(xb-xa);
 
     r->second = distf(g_a,g_b);
 

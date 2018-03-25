@@ -48,3 +48,12 @@ void Ligne::nom()
 {
     cout << id << endl;
 }
+
+void Ligne::actualiser_trains()
+{
+    unsigned int i;
+
+    for(i=0; i<trains.size(); i++)
+        trains[i].actualiser_position();
+}
+

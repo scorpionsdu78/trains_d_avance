@@ -185,8 +185,9 @@ pair<float,float> Metro::getCoordAff(int i) const
 
 void Metro::testtrain()
 {
+    lignes[0]->presentation();
 
-
+    lignes[0]->actualiser_trains();
 
 }
 

@@ -28,6 +28,8 @@ int main()
 
 //    test1();
 
+    metro.testtrain();
+
     cout << "Bye train d'avance !" << endl;
 
     sf::CircleShape affStations[metro.getStationsSize()];

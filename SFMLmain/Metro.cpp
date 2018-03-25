@@ -197,3 +197,10 @@ std::pair<float,float> Metro::getGareLigneCoord(int i, int j) const
 {
     return lignes[i]->getCoordGare(j);
 }
+
+void Metro::testtrain()
+{
+
+
+
+}

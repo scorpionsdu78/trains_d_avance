@@ -46,6 +46,7 @@ class Metro
         // renvoie les coordonnées de la Gare à la position j dans la Ligne numéro i
         std::pair<float,float> getGareLigneCoord(int i, int j) const;
 
+        void testtrain();
 };
 
 // Affiche un message d'erreur et quitte

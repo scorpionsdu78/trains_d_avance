@@ -30,6 +30,18 @@ int main()
 
     cout << "Bye train d'avance !" << endl;
 
+    sf::CircleShape affStations[metro.getStationsSize()];
+
+    for (int i(0); i < metro.getStationsSize(); i++)
+    {
+        affStations[i].setRadius(20);
+        affStations[i].setPointCount(6);
+        affStations[i].setFillColor(sf::Color::White);
+        affStations[i].setOutlineThickness(-6);
+        affStations[i].setOutlineColor(sf::Color::Black);
+        affStations[i].setPosition(get<0>(metro.getCoordAff(i)) * 40.0, get<1>(metro.getCoordAff(i)) * 40.0);
+    }
+
     // Boucle principale
     while (window.isOpen())
     {
@@ -44,7 +56,10 @@ int main()
         window.clear(sf::Color::White);
 
         // On dessine sur le buffer
-
+        for (int i(0); i < metro.getStationsSize(); i++)
+        {
+            window.draw(affStations[i]);
+        }
 
         // On affiche le contenu du buffer sur l'écran
         window.display();

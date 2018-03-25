@@ -173,16 +173,12 @@ void Metro::presentation()
     }
 }
 
-<<<<<<< HEAD
-
-=======
 int Metro::getStationsSize() const
 {
     return stations.size();
 }
 
-pair<int,int> Metro::getCoordAff(int i) const
+pair<float,float> Metro::getCoordAff(int i) const
 {
-    return stations[i]->getCoords();
+    return stations[i]->get_coords();
 }
->>>>>>> f211f464a25e2eac2940051fdbb2738d6ae273fb

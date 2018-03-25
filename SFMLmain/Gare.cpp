@@ -67,20 +67,7 @@ int Gare::ping_freq() const
     return freq;
 }
 
-<<<<<<< HEAD
 pair<float,float> Gare::get_coords() const
-=======
-<<<<<<< HEAD
-pair<int,int> Gare::getCoords() const
 {
     return coords;
 }
-=======
-pair<int,int> Gare::get_coords() const
->>>>>>> f211f464a25e2eac2940051fdbb2738d6ae273fb
-{
-    return coords;
-}
-
-
->>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7

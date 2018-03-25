@@ -1,9 +1,6 @@
 #include <iostream>
-<<<<<<< HEAD
 #include <SFML/Graphics.hpp>
-=======
 #include <ctime>
->>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 
 #include "Gare.h"
 #include "Ligne.h"
@@ -15,7 +12,6 @@ using namespace std;
 
 int main()
 {
-<<<<<<< HEAD
     // Pour activer l'anti-aliasing
     sf::ContextSettings settings;
     settings.antialiasingLevel = 4;
@@ -24,11 +20,9 @@ int main()
     sf::RenderWindow window(sf::VideoMode(700, 700), "Un train d'avance", sf::Style::Default, settings);
 
     cout << "Hello train d'avance !" << endl << endl;
-=======
     srand(time(nullptr));
 
     cout << "Hello train d'avance !" << endl;
->>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
     Metro metro("Metro.txt");
     metro.presentation();
 

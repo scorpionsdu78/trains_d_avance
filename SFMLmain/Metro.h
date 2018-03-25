@@ -37,7 +37,8 @@ class Metro
         // renvoie la taille du vector de Gare*
         int getStationsSize() const;
         // renvoie les coordonnées de la Gare à la ième position dans le vector
-        std::pair<int,int> getCoordAff(int i) const;
+        std::pair<float,float> getCoordAff(int i) const;
+
 
 };
 
@@ -45,7 +46,7 @@ class Metro
 void error_msg(std::string msg);
 
 // convertis un string en int
-int nstoi(std::string str);
+float nstoi(std::string str);
 
 // sépare une chaine str en plusieurs chaines stockées dans un vecteur de string.
 // le séparateur est le char c

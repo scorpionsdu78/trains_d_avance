@@ -29,6 +29,8 @@ int main()
 
 //    test1();
 
+    metro.testtrain();
+
     cout << "Bye train d'avance !" << endl;
 
     // Un tableau d'hexagones qui représentent les gares, placés grâce aux coords des Gares

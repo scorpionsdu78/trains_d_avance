@@ -58,3 +58,11 @@ std::pair<float,float> Ligne::getCoordGare(int i) const
 {
     return stations_lst[i]->get_coords();
 }
+
+void Ligne::actualiser_trains()
+{
+    unsigned int i;
+
+    for(i=0; i<trains.size(); i++)
+        trains[i].actualiser_position();
+}

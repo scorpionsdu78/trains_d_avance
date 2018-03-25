@@ -200,7 +200,8 @@ std::pair<float,float> Metro::getGareLigneCoord(int i, int j) const
 
 void Metro::testtrain()
 {
+    lignes[0]->presentation();
 
-
+    lignes[0]->actualiser_trains();
 
 }

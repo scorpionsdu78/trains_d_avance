@@ -62,6 +62,11 @@ int Gare::donner_voyageur(Train* tr)
 
 }
 
+int Gare::nb_voyageur()
+{
+    return voyageurs;
+}
+
 int Gare::ping_freq() const
 {
     return freq;
@@ -71,3 +76,4 @@ pair<float,float> Gare::get_coords() const
 {
     return coords;
 }
+

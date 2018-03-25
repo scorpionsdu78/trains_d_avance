@@ -52,6 +52,9 @@ class Metro
         // renvoie le nombre de trains dans la ligne i
         int getNombreTrain(int i) const;
 
+        // renvoie le nombre de voyageurs de la Gare i
+        int getNombreVoyageursGare(int i) const;
+
         void testtrain();
 };
 

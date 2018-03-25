@@ -29,7 +29,9 @@ int main()
 
 //    test1();
 
-    //metro.testtrain();
+    metro.testtrain();
+
+    //metro.lancer();
 
     cout << "Bye train d'avance !" << endl;
 

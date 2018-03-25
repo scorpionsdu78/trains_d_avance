@@ -202,9 +202,9 @@ void Metro::testtrain()
 
     lignes[0]->actualiser_trains();
 
-    lignes[0]->actualiser_trains();
+    //lignes[0]->actualiser_trains();
 
-    lignes[0]->actualiser_trains();
+    //lignes[0]->actualiser_trains();
 
     /*lignes[0]->actualiser_trains();
 

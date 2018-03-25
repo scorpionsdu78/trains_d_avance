@@ -41,9 +41,9 @@ private:
 
     int mode;
 
-    int a;
+    float a;
 
-    int b;
+    float b;
 
     float dist;
 

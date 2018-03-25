@@ -15,6 +15,8 @@ Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): po
 
     transition = true;
 
+    sens_logique =true;
+
     a=0;
 
     b=0;
@@ -100,7 +102,14 @@ void Train::actualiser_position()
     int signe;
     pair<float,float> old;
     pair<float,float> coor_dest;
-    Gare* gare_b = ligne->find_gare(pos_ligne+1);
+    Gare* gare_b =nullptr;
+
+    if(sens_logique == true)
+        gare_b = ligne->find_gare(pos_ligne+1);
+
+    else if (sens_logique == false)
+        gare_b = ligne->find_gare(pos_ligne-1);
+
 
 
     coor_dest = gare_b->get_coords();
@@ -145,11 +154,11 @@ void Train::actualiser_position()
             coords.second = (coords.first * a)+b;
         }
 
-        dist -= distf(old,coords);
+        dist = distf(coords,coor_dest);
 
         cout << "dist =" << dist << endl;
 
-        if (dist<0.5)
+        if (dist<0.005)
         {
 
             transition=true;
@@ -158,7 +167,17 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            pos_ligne++;
+            if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
+                sens_logique = false;
+
+            else if ((pos_ligne - 1)< 0)
+                sens_logique =true;
+
+            if(sens_logique == true)
+                pos_ligne++;
+
+            else if (sens_logique == false)
+                pos_ligne--;
         }
 
     }
@@ -187,9 +206,9 @@ void Train::actualiser_position()
         }
 
 
-        dist -= distf(old,coords);
+        dist = distf(coords,coor_dest);
 
-        if (dist<0.5)
+        if (dist<0.005)
         {
 
             transition=true;
@@ -198,7 +217,17 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            pos_ligne++;
+            if ((pos_ligne + 1)>= ligne->getNombreLignes())
+                sens_logique = false;
+
+            else if ((pos_ligne - 1)<= 0)
+                sens_logique =true;
+
+            if(sens_logique == true)
+                pos_ligne++;
+
+            else if (sens_logique == false)
+                pos_ligne--;
         }
 
 

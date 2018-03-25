@@ -5,6 +5,7 @@
 #include <utility>
 #include <cstdlib>
 
+
 #include "Gare.h"
 
 class Gare;
@@ -13,14 +14,15 @@ class Ligne;
 class Train
 {
 public:
-	Train();
+	Train(Gare* _position, Ligne* _ligne,std::pair<int,int> _coords);
 	~Train();
 	int donner_voyageur(Gare* gr);
 	void recuperer_voyageur(Gare* gr);
 	void actualiser_position();
 	int place_disponible();
 	void passage_gare(Gare* gr);
-
+	void presentation();
+    void init_tmp(Gare* origine, std::pair<int,int> coords);
 
 
 
@@ -30,19 +32,16 @@ private:
 
 	Gare* position;
 
-	Ligne* lignes;
+	Ligne* ligne;
 
-	std::pair<int,int> positions;
+	std::pair<int,int> coords;
 
 
 
 };
 
-/*void test1(void)
-{
+void test1(void);
 
-}
-*/
 
 
 

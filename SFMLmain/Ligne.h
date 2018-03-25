@@ -16,7 +16,7 @@ public:
 	~Ligne();
 	void actualiser_trains();
 	void presentation();
-
+    void ajout_train(Train tr);
 private:
 
     int id;

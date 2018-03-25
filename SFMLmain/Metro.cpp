@@ -146,10 +146,7 @@ Ligne* Metro::new_ligne(string data)
     int nb_train = nstoi(vect[1]);
     vector<Train> trains;
     vector<Gare*> stations_ligne;
-    for(int i = 0; i < nb_train; i++)
-    {
-        trains.push_back(Train());
-    }
+
     for(size_t i = 2; i < vect.size(); i++)
     {
         Gare* tmp = find_stations(stations,vect[i]);
@@ -159,7 +156,13 @@ Ligne* Metro::new_ligne(string data)
         }
         stations_ligne.push_back(tmp);
     }
-    return new Ligne(id,stations_ligne,trains);
+    Ligne* new_l = new Ligne(id,stations_ligne,trains);
+
+    for(int i = 0; i < nb_train; i++)
+    {
+        new_l->ajout_train(Train(stations_ligne[0],new_l,stations_ligne[0]->get_coords()));
+    }
+    return new_l;
 }
 
 void Metro::presentation()

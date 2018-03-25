@@ -182,3 +182,11 @@ pair<float,float> Metro::getCoordAff(int i) const
 {
     return stations[i]->get_coords();
 }
+
+void Metro::testtrain()
+{
+
+
+
+}
+

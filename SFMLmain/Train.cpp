@@ -150,6 +150,7 @@ float distf(pair<float,float> g_a, pair<float,float> g_b)
 
 }
 
+
 /*
 void test1(void)
 {

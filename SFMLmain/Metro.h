@@ -39,6 +39,8 @@ class Metro
         // renvoie les coordonnées de la Gare à la ième position dans le vector
         std::pair<float,float> getCoordAff(int i) const;
 
+        void testtrain();
+
 
 };
 

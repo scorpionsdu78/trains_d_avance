@@ -7,6 +7,7 @@
 #include "Metro.h"
 #include "Train.h"
 
+#include "sfLine.h"
 
 using namespace std;
 
@@ -30,6 +31,7 @@ int main()
 
     cout << "Bye train d'avance !" << endl;
 
+    // Un tableau d'hexagones qui représentent les gares, placés grâce aux coords des Gares
     sf::CircleShape affStations[metro.getStationsSize()];
 
     for (int i(0); i < metro.getStationsSize(); i++)
@@ -40,6 +42,35 @@ int main()
         affStations[i].setOutlineThickness(-6);
         affStations[i].setOutlineColor(sf::Color::Black);
         affStations[i].setPosition(get<0>(metro.getCoordAff(i)) * 40.0, get<1>(metro.getCoordAff(i)) * 40.0);
+    }
+
+    vector<vector<sfLine>> affLigne(metro.getLignesSize());
+
+    sf::Color color;
+    for (int i(0); i < metro.getLignesSize(); i++)
+    {
+        switch (i)
+        {
+            case 0:
+                color = sf::Color::Red;
+                break;
+            case 1:
+                color = sf::Color::Green;
+                break;
+            case 2:
+                color = sf::Color::Yellow;
+                break;
+            case 4:
+                color = sf::Color::Blue;
+                break;
+        }
+        for (int j(0); j < metro.getInterLignesNbr(i); j++)
+        {
+            affLigne[i].push_back(sfLine(sf::Vector2f(get<0>(metro.getGareLigneCoord(i,j)) * 40.0 + 20.0, get<1>(metro.getGareLigneCoord(i,j)) * 40.0 + 20.0),
+                                         sf::Vector2f(get<0>(metro.getGareLigneCoord(i,j+1)) * 40.0 + 20.0, get<1>(metro.getGareLigneCoord(i,j+1)) * 40.0 + 20.0),
+                                         color));
+        }
+
     }
 
     // Boucle principale
@@ -56,6 +87,14 @@ int main()
         window.clear(sf::Color::White);
 
         // On dessine sur le buffer
+        for (int i(0); i < metro.getLignesSize(); i++)
+        {
+            for (int j(0); j < metro.getInterLignesNbr(i); j++)
+            {
+                window.draw(affLigne[i][j]);
+            }
+        }
+
         for (int i(0); i < metro.getStationsSize(); i++)
         {
             window.draw(affStations[i]);

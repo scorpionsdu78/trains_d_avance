@@ -39,6 +39,12 @@ class Metro
         // renvoie les coordonnées de la Gare à la ième position dans le vector
         std::pair<float,float> getCoordAff(int i) const;
 
+        // renvoie la taille du vecteur de Ligne*
+        int getLignesSize() const;
+        // renvoie le nombre de connexion dans la ligne i
+        int getInterLignesNbr(int i) const;
+        // renvoie les coordonnées de la Gare à la position j dans la Ligne numéro i
+        std::pair<float,float> getGareLigneCoord(int i, int j) const;
 
 };
 

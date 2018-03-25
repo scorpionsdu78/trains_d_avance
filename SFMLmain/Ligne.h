@@ -20,6 +20,8 @@ public:
     void ajout_train(Train tr);
     Gare* find_gare(int i);
     void nom();
+    int getNombreLignes() const;
+    std::pair<float,float> getCoordGare(int i) const;
 
 private:
 

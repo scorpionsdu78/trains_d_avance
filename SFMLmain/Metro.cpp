@@ -182,3 +182,18 @@ pair<float,float> Metro::getCoordAff(int i) const
 {
     return stations[i]->get_coords();
 }
+
+int Metro::getLignesSize() const
+{
+    return lignes.size();
+}
+
+int Metro::getInterLignesNbr(int i) const
+{
+    return lignes[i]->getNombreLignes();
+}
+
+std::pair<float,float> Metro::getGareLigneCoord(int i, int j) const
+{
+    return lignes[i]->getCoordGare(j);
+}

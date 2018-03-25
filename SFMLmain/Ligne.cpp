@@ -48,3 +48,13 @@ void Ligne::nom()
 {
     cout << id << endl;
 }
+
+int Ligne::getNombreLignes() const
+{
+    return stations_lst.size() - 1;
+}
+
+std::pair<float,float> Ligne::getCoordGare(int i) const
+{
+    return stations_lst[i]->get_coords();
+}

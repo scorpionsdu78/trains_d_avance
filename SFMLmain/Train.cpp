@@ -6,7 +6,7 @@
 using namespace std;
 
 pair<int,float>* equation(Gare* garea, Gare* gareb);
-float dist(pair<float,float> g_a, pair<float,float> g_b);
+float distf(pair<float,float> g_a, pair<float,float> g_b);
 
 Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
 {
@@ -90,6 +90,7 @@ void Train::actualiser_position()
     int coef;
     float dist;
     pair<int,float>* tmp;
+    pair<float,float> old;
 
     tmp = equation(ligne->find_gare(pos_ligne),ligne->find_gare(pos_ligne+1));
 
@@ -98,10 +99,14 @@ void Train::actualiser_position()
 
     while (dist >1)
     {
-         coords.first = coords.first + 1;
-         coords.second = coords.second * coef;
+        old.first = coords.first;
+        old.second = coords.second;
 
-         //dist()
+        coords.first = coords.first +1;
+        coords.second = coords.second * coef;
+
+        dist -= distf(old,coords);
+
     }
 
 
@@ -123,13 +128,13 @@ pair<int,float>* equation(Gare* garea, Gare* gareb)
 
     r->first = (xb-xa)/(yb-ya);
 
-    r->second = dist(g_a,g_b);
+    r->second = distf(g_a,g_b);
 
     return r;
 
 }
 
-float dist(pair<float,float> g_a, pair<float,float> g_b)
+float distf(pair<float,float> g_a, pair<float,float> g_b)
 {
     int xa,xb,ya,yb;
     float r;

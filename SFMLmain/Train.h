@@ -35,12 +35,25 @@ private:
 
 	int pos_ligne;
 
+    bool transition;
+
+    bool sens_logique;
+
+    int mode;
+
+    int a;
+
+    int b;
+
+    float dist;
 
 	Gare* position;
 
 	Ligne* ligne;
 
 	std::pair<float,float> coords;
+
+	void init_transport();
 
 
 

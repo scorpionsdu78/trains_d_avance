@@ -35,6 +35,7 @@ int main()
 
     // Un tableau d'hexagones qui représentent les gares, placés grâce aux coords des Gares
     sf::CircleShape affStations[metro.getStationsSize()];
+    vector<vector<sf::CircleShape>> affVoyageurs(metro.getStationsSize());
 
     for (int i(0); i < metro.getStationsSize(); i++)
     {
@@ -44,6 +45,12 @@ int main()
         affStations[i].setOutlineThickness(-6);
         affStations[i].setOutlineColor(sf::Color::Black);
         affStations[i].setPosition(get<0>(metro.getCoordAff(i)) * 40.0, get<1>(metro.getCoordAff(i)) * 40.0);
+
+        for (int j(0); j < (metro.getNombreVoyageursGare(i) / 5); j++)
+        {
+            affVoyageurs[i].push_back(sf::CircleShape(4.5, 60));
+            affVoyageurs[i][j].setFillColor(sf::Color::Black);
+        }
     }
 
     vector<vector<sfLine>> affLigne(metro.getLignesSize());
@@ -109,6 +116,17 @@ int main()
         for (int i(0); i < metro.getStationsSize(); i++)
         {
             window.draw(affStations[i]);
+            for (int j(0); j < metro.getNombreVoyageursGare(i) / 5; j++)
+            {
+                if (j > 7)
+                    affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 65.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);
+                else if (j > 3)
+                    affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 55.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);
+                else
+                    affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 45.0, get<1>(metro.getCoordAff(i)) * 40.0 + j * 10.0);
+
+                window.draw(affVoyageurs[i][j]);
+            }
         }
 
         for (int i(0); i < metro.getLignesSize(); i++)

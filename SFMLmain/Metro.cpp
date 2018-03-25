@@ -239,3 +239,8 @@ void Metro::lancer()
    }
 
 }
+
+int Metro::getNombreVoyageursGare(int i) const
+{
+    stations[i]->nb_voyageur();
+}

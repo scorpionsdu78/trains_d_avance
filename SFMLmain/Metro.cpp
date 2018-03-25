@@ -210,12 +210,12 @@ void Metro::testtrain()
 
 pair<float,float> Metro::getCoordTrain(int i, int j) const
 {
-    lignes[i]->getCoordTrain(j);
+    return lignes[i]->getCoordTrain(j);
 }
 
 int Metro::getNombreTrain(int i) const
 {
-    lignes[i]->getNombreTrains();
+    return lignes[i]->getNombreTrains();
 }
 
 void Metro::lancer()

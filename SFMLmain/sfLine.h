@@ -5,7 +5,7 @@ class sfLine : public sf::Drawable
 {
 public:
     sfLine(const sf::Vector2f& point1, const sf::Vector2f& point2, const sf::Color _color):
-        color(_color), thickness(6.f)
+        thickness(6.f), color(_color)
     {
         sf::Vector2f direction = point2 - point1;
         sf::Vector2f unitDirection = direction/std::sqrt(direction.x*direction.x+direction.y*direction.y);
@@ -24,6 +24,7 @@ public:
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const
     {
+        (void)states;
         target.draw(vertices,4,sf::Quads);
     }
 

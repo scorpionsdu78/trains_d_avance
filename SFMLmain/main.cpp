@@ -25,11 +25,11 @@ int main()
 
     cout << "Hello train d'avance !" << endl;
     Metro metro("Metro.txt");
-    //metro.presentation();
+    metro.presentation();
 
 //    test1();
 
-    metro.testtrain();
+    //metro.testtrain();
 
     cout << "Bye train d'avance !" << endl;
 

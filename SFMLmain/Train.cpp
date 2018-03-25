@@ -87,7 +87,7 @@ void Train::presentation()
 
 void Train::actualiser_position()
 {
-    cout << "entrez actualiser position" << endl;
+    //cout << "entrez actualiser position" << endl;
 
     float coef;
     float dist;
@@ -104,54 +104,112 @@ void Train::actualiser_position()
 
     coor_dest = gare_b->get_coords();
 
-    tmp = equation(gare_a,gare_b);
+    cout << "depart ( " << coords.first << " ; " << coords.second << " )"<<endl;
+    cout << "depart ( " << coor_dest.first << " ; " << coor_dest.second << " )"<<endl;
 
-    coef = tmp->first;
-    dist = tmp->second;
-
-    b = coords.second - coef * coords.first;
-
-
-    cout << "xb= " << coor_dest.first << "xa" << coords.first << endl;
-
-    if(coor_dest.first - coords.first > 0)
-        signe = 1;
-
-    else if(coor_dest.first - coords.first < 0)
-        signe = 0;
-
-    cout << "coef = " << coef << endl;
-
-    while (dist >1)
+    if(coords.first != coor_dest.first)
     {
-        cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
-        cout << "distance= " << dist << endl;
 
-        old.first = coords.first;
-        old.second = coords.second;
 
-        if(signe)
+        tmp = equation(gare_a,gare_b);
+
+        coef = tmp->first;
+        dist = tmp->second;
+
+        b = coords.second - coef * coords.first;
+
+        cout << "xb= " << coor_dest.first << "xa" << coords.first << endl;
+
+        if(coor_dest.first - coords.first > 0)
+            signe = 1;
+
+        else if(coor_dest.first - coords.first < 0)
+            signe = 0;
+
+        cout << "coef = " << coef << endl;
+
+        while (dist >1)
         {
+            cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
+            cout << "distance= " << dist << endl;
 
-            coords.first = coords.first +1;
-            coords.second = (coords.first * coef) + b;
+            old.first = coords.first;
+            old.second = coords.second;
+
+            if(signe)
+            {
+
+                coords.first = coords.first +1;
+                coords.second = (coords.first * coef) + b;
+            }
+
+            else if(!signe)
+            {
+
+                coords.first = coords.first - 1;
+                coords.second = (coords.first * coef)+b;
+            }
+
+
+            cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
+
+            dist -= distf(old,coords);
+
+            cout << "distance= " << dist << endl;
+
         }
+    }
 
-        else if(!signe)
+    else if(coords.first == coor_dest.first)
+    {
+        dist = distf(coor_dest,coords);
+
+        if(coor_dest.second - coords.second > 0)
+            signe = 1;
+
+        else if(coor_dest.second - coords.second < 0)
+            signe = 0;
+
+        while (dist >1)
         {
+            cout << "entrez else if" << endl;
 
-            coords.first = coords.first - 1;
-            coords.second = (coords.first * coef)+b;
+            cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
+            cout << "distance= " << dist << endl;
+
+            old.first = coords.first;
+            old.second = coords.second;
+
+            if(signe)
+            {
+                coords.second = (coords.second  + 1);
+            }
+
+            else if(!signe)
+            {
+                coords.second = coords.second - 1;
+            }
+
+
+            cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
+
+            dist -= distf(old,coords);
+
+            cout << "distance= " << dist << endl;
+
         }
-
-
-        cout << "( " << coords.first << " ; " << coords.second <<" )"<< endl;
-
-        dist -= distf(old,coords);
-
-        cout << "distance= " << dist << endl;
 
     }
+
+    pos_ligne++;
+
+    /*else
+    {
+        passage_gare(gare_b);
+
+        pos_ligne++;
+
+    }*/
 
 
 }

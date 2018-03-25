@@ -36,8 +36,6 @@ private:
     int freq;
 
 
-
-
 };
 
 

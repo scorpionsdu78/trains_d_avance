@@ -50,8 +50,6 @@ vector<string> split(string str, char c)
     return vect;
 }
 
-
-
 Metro::Metro(const char* file)
 {
     ifstream plans(file,ios::in);
@@ -204,6 +202,10 @@ void Metro::testtrain()
 
     lignes[0]->actualiser_trains();
 
+    lignes[0]->actualiser_trains();
+
+    lignes[0]->actualiser_trains();
+
 }
 
 pair<float,float> Metro::getCoordTrain(int i, int j) const
@@ -214,4 +216,11 @@ pair<float,float> Metro::getCoordTrain(int i, int j) const
 int Metro::getNombreTrain(int i) const
 {
     lignes[i]->getNombreTrains();
+}
+
+void Metro::lancer()
+{
+
+
+
 }

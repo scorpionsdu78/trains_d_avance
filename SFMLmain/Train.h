@@ -35,6 +35,7 @@ private:
 
 	int pos_ligne;
 
+
 	Gare* position;
 
 	Ligne* ligne;

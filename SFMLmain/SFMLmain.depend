@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1521891565 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
+1521910202 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
 	<iostream>
+	<SFML/Graphics.hpp>
 	"Gare.h"
 	"Ligne.h"
 	"Metro.h"
@@ -393,39 +394,62 @@
 	<string>
 	<vector>
 
-1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.h
+1521911708 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.h
 	<string>
 	<vector>
 	"Train.h"
 
-1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.h
+1521908844 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.h
 	<utility>
 	<cstdlib>
 	"Gare.h"
 
-1521891565 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.h
+1521907812 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.h
 	<vector>
 	"Train.h"
 
-1521900615 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.h
+1521911573 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
+<<<<<<< HEAD
+1521908961 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.cpp
+	"Gare.h"
+	<iostream>
+
+1521908961 c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.h
+=======
 1521964354 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"
 	<iostream>
 
 1521964337 c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.h
+>>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 	<string>
 	<vector>
 	<utility>
 	"Train.h"
 
+<<<<<<< HEAD
+1521908963 c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.h
+=======
 1521920468 c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.h
+>>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 	<utility>
 	<cstdlib>
 	"Gare.h"
 
+<<<<<<< HEAD
+1521908961 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.cpp
+	<iostream>
+	"Ligne.h"
+
+1521908961 c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.h
+	<vector>
+	"Train.h"
+
+1521908963 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\main.cpp
+=======
 1521964823 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.cpp
 	<iostream>
 	"Ligne.h"
@@ -435,6 +459,7 @@
 	"Train.h"
 
 1521964709 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\main.cpp
+>>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 	<iostream>
 	<ctime>
 	"Gare.h"
@@ -442,11 +467,19 @@
 	"Metro.h"
 	"Train.h"
 
+<<<<<<< HEAD
+1521908961 c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.h
+	<vector>
+	<string>
+
+1521909010 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.cpp
+=======
 1521919888 c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
 1521964312 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.cpp
+>>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 	"Metro.h"
 	<fstream>
 	<iostream>
@@ -457,12 +490,21 @@
 	"Gare.h"
 	"Ligne.h"
 
+<<<<<<< HEAD
+1521908961 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.cpp
+	"Passager.h"
+
+1521908961 c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.h
+
+1521908963 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.cpp
+=======
 1521919836 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.cpp
 	"Passager.h"
 
 1521919836 c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.h
 
 1521964928 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.cpp
+>>>>>>> 3d15c44de59d8bbfdaea465ee6d53bf46bda06c7
 	"Train.h"
 	<iostream>
 
@@ -521,4 +563,31 @@
 1521971231 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
 	<iostream>
+
+1521911768 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.cpp
+	"Gare.h"
+	<iostream>
+
+1521907812 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.cpp
+	<iostream>
+	"Ligne.h"
+
+1521495459 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\passager.cpp
+	"Passager.h"
+
+1521473621 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\passager.h
+
+1521891565 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.cpp
+	"Train.h"
+
+1521911788 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.cpp
+	"Metro.h"
+	<fstream>
+	<iostream>
+	<cstdlib>
+	<utility>
+	<string>
+	<sstream>
+	"Gare.h"
+	"Ligne.h"
 

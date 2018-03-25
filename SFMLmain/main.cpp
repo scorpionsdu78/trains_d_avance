@@ -14,10 +14,10 @@ int main()
     srand(time(nullptr));
 
     cout << "Hello train d'avance !" << endl;
-    /*Metro metro("Metro.txt");
-    metro.presentation();*/
+    Metro metro("Metro.txt");
+    metro.presentation();
 
-    test1();
+//    test1();
 
     cout << "Bye train d'avance !" << endl;
     return 0;

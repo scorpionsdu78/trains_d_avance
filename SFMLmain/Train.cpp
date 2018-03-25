@@ -4,21 +4,22 @@
 
 using namespace std;
 
-Train::Train()
+Train::Train(Gare* _position, Ligne* _ligne, std::pair<int,int> _coords): position{_position}, ligne{_ligne}, coords{_coords}
 {
+    nb_passager = 0;
 }
 
 Train::~Train()
 {
 }
 
-void Train::init_tmp(Gare* origine, pair<int,int> coords)
+void Train::init_tmp(Gare* origine, pair<int,int> _coords)
 {
     nb_passager = 60;
 
     position = origine;
 
-    positions = coords;
+    coords = _coords;
 
 }
 
@@ -74,16 +75,15 @@ void Train::passage_gare(Gare* gr)
 
 void Train::presentation()
 {
-    cout << "j'ai " << nb_passager <<"passager " << endl << endl;
+    cout << "j'ai " << nb_passager <<"passager " << endl;
 }
-
+/*
 void test1(void)
 {
     pair<int,int> coords(0,0);
-
     Gare gr("test",coords);
 
-    Train tr;
+    Train tr();
 
     tr.init_tmp(&gr,coords);
 
@@ -100,4 +100,4 @@ void test1(void)
 
 
 }
-
+*/

@@ -411,39 +411,42 @@
 	<vector>
 	<string>
 
-1521907228 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.cpp
+1521964354 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"
 	<iostream>
 
-1521904925 c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.h
+1521964337 c:\users\theo\documents\github\trains_d_avance\sfmlmain\gare.h
 	<string>
 	<vector>
+	<utility>
 	"Train.h"
 
-1521898025 c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.h
+1521920468 c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.h
 	<utility>
 	<cstdlib>
 	"Gare.h"
 
-1521907566 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.cpp
+1521964823 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.cpp
 	<iostream>
 	"Ligne.h"
 
-1521907507 c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.h
+1521964055 c:\users\theo\documents\github\trains_d_avance\sfmlmain\ligne.h
 	<vector>
 	"Train.h"
 
-1521903190 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\main.cpp
+1521964709 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\main.cpp
 	<iostream>
+	<ctime>
 	"Gare.h"
 	"Ligne.h"
 	"Metro.h"
+	"Train.h"
 
-1521898024 c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.h
+1521919888 c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
-1521907301 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.cpp
+1521964312 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>
@@ -454,13 +457,14 @@
 	"Gare.h"
 	"Ligne.h"
 
-1521898024 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.cpp
+1521919836 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.cpp
 	"Passager.h"
 
-1521898024 c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.h
+1521919836 c:\users\theo\documents\github\trains_d_avance\sfmlmain\passager.h
 
-1521898025 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.cpp
+1521964928 source:c:\users\theo\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
+	<iostream>
 
 1521912636 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"

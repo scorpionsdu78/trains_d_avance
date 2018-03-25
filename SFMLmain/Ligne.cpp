@@ -13,6 +13,12 @@ Ligne::~Ligne()
 
 }
 
+void Ligne::ajout_train(Train tr)
+{
+    trains.push_back(tr);
+}
+
+
 void Ligne::presentation()
 {
     cout << "# Presentation ligne: " << endl;
@@ -22,6 +28,11 @@ void Ligne::presentation()
     for(size_t i = 0; i < stations_lst.size(); i++)
     {
         stations_lst[i]->presentation();
+    }
+    cout << "Liste des Trains: " << endl;
+    for(size_t i = 0; i < trains.size(); i++)
+    {
+        trains[i].presentation();
     }
     cout << endl;
 }

@@ -25,6 +25,7 @@ public:
 	void nouv_voyageur();
 	void presentation() const;
 	int ping_freq() const;
+	std::pair<int,int> get_coords() const;
 
 
 private:

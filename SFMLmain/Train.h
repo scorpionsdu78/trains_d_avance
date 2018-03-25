@@ -14,7 +14,7 @@ class Ligne;
 class Train
 {
 public:
-	Train();
+	Train(Gare* _position, Ligne* _ligne,std::pair<int,int> _coords);
 	~Train();
 	int donner_voyageur(Gare* gr);
 	void recuperer_voyageur(Gare* gr);
@@ -32,9 +32,9 @@ private:
 
 	Gare* position;
 
-	Ligne* lignes;
+	Ligne* ligne;
 
-	std::pair<int,int> positions;
+	std::pair<int,int> coords;
 
 
 

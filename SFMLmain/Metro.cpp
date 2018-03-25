@@ -78,7 +78,7 @@ Metro::Metro(const char* file)
             error_msg("Erreur lecture fichier: s'attend a l");
         }
 
-        lire_lignes(plans,stoi(tmp[1]));
+        lire_lignes(plans,nstoi(tmp[1]));
 
     }
     else
@@ -142,14 +142,11 @@ void Metro::lire_lignes(std::ifstream& file, int n)
 Ligne* Metro::new_ligne(string data)
 {
     vector<string> vect = split(data,' ');
-    int id = stoi(vect[0]);
+    int id = nstoi(vect[0]);
     int nb_train = nstoi(vect[1]);
     vector<Train> trains;
     vector<Gare*> stations_ligne;
-    for(int i = 0; i < nb_train; i++)
-    {
-        trains.push_back(Train());
-    }
+
     for(size_t i = 2; i < vect.size(); i++)
     {
         Gare* tmp = find_stations(stations,vect[i]);
@@ -159,7 +156,13 @@ Ligne* Metro::new_ligne(string data)
         }
         stations_ligne.push_back(tmp);
     }
-    return new Ligne(id,stations_ligne,trains);
+    Ligne* new_l = new Ligne(id,stations_ligne,trains);
+
+    for(int i = 0; i < nb_train; i++)
+    {
+        new_l->ajout_train(Train(stations_ligne[0],new_l,stations_ligne[0]->get_coords()));
+    }
+    return new_l;
 }
 
 void Metro::presentation()

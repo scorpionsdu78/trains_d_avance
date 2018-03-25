@@ -16,9 +16,9 @@ void error_msg(string msg)
         exit(1);
 }
 
-int nstoi(string str)
+float nstoi(string str)
 {
-    int res = 0;
+    float res = 0;
     for(size_t i = 0; i < str.size(); i++)
     {
         if(str[i] < '0' || str[i] > '9')
@@ -123,7 +123,7 @@ Gare* Metro::new_gare(string data)
     {
         error_msg("Erreur lecture fichier: s'attend à 3 param (gare)");
     }
-    pair<int,int> coords = make_pair(nstoi(vect[1]),nstoi(vect[2]));
+    pair<float,float> coords = make_pair(nstoi(vect[1]),nstoi(vect[2]));
     return new Gare(vect[0],coords);
 }
 
@@ -172,3 +172,5 @@ void Metro::presentation()
         lignes[i]->presentation();
     }
 }
+
+

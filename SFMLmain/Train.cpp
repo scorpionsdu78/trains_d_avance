@@ -1,19 +1,24 @@
 #include "Train.h"
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-Train::Train(Gare* _position, Ligne* _ligne, std::pair<int,int> _coords): position{_position}, ligne{_ligne}, coords{_coords}
+pair<int,float>* equation(Gare* garea, Gare* gareb);
+float dist(pair<float,float> g_a, pair<float,float> g_b);
+
+Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
 {
     nb_passager = 0;
+    pos_ligne = 0;
 }
 
 Train::~Train()
 {
 }
 
-void Train::init_tmp(Gare* origine, pair<int,int> _coords)
+void Train::init_tmp(Gare* origine, pair<float,float> _coords)
 {
     nb_passager = 60;
 
@@ -75,8 +80,71 @@ void Train::passage_gare(Gare* gr)
 
 void Train::presentation()
 {
-    cout << "j'ai " << nb_passager <<"passager " << endl;
+    cout << "je suis sur la ligne " << endl;
+    ligne->nom();
+    cout <<"et j'ai" << nb_passager <<"passager " << endl;
 }
+
+void Train::actualiser_position()
+{
+    int coef;
+    float dist;
+    pair<int,float>* tmp;
+
+    tmp = equation(ligne->find_gare(pos_ligne),ligne->find_gare(pos_ligne+1));
+
+    coef = tmp->first;
+    dist = tmp->second;
+
+    while (dist >1)
+    {
+         coords.first = coords.first + 1;
+         coords.second = coords.second * coef;
+
+         //dist()
+    }
+
+
+}
+
+pair<int,float>* equation(Gare* garea, Gare* gareb)
+{
+    pair<int,float>* r = new pair<int,float>;
+
+    float xa,xb,ya,yb;
+
+    pair<float,float> g_a = garea->get_coords();
+    pair<float,float> g_b = gareb->get_coords();
+
+    xa=g_a.first;
+    ya=g_a.second;
+    xb=g_b.first;
+    yb=g_b.second;
+
+    r->first = (xb-xa)/(yb-ya);
+
+    r->second = dist(g_a,g_b);
+
+    return r;
+
+}
+
+float dist(pair<float,float> g_a, pair<float,float> g_b)
+{
+    int xa,xb,ya,yb;
+    float r;
+
+    xa=g_a.first;
+    ya=g_a.second;
+    xb=g_b.first;
+    yb=g_b.second;
+
+    r = sqrt(pow((xb-xa),2)+pow((yb-ya),2));
+
+    return r;
+
+}
+
 /*
 void test1(void)
 {
@@ -101,3 +169,4 @@ void test1(void)
 
 }
 */
+

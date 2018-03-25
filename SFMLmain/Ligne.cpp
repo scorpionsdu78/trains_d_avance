@@ -37,3 +37,14 @@ void Ligne::presentation()
     cout << endl;
 }
 
+Gare* Ligne::find_gare(int i)
+{
+
+    return stations_lst[i];
+
+}
+
+void Ligne::nom()
+{
+    cout << id << endl;
+}

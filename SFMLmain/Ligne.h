@@ -22,6 +22,8 @@ public:
     void nom();
     int getNombreLignes() const;
     std::pair<float,float> getCoordGare(int i) const;
+    int getNombreTrains() const;
+    std::pair<float,float> getCoordTrain(int i) const;
 
 private:
 

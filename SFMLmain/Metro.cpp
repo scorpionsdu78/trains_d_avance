@@ -193,7 +193,7 @@ int Metro::getInterLignesNbr(int i) const
     return lignes[i]->getNombreLignes();
 }
 
-std::pair<float,float> Metro::getGareLigneCoord(int i, int j) const
+pair<float,float> Metro::getGareLigneCoord(int i, int j) const
 {
     return lignes[i]->getCoordGare(j);
 }
@@ -204,4 +204,14 @@ void Metro::testtrain()
 
     lignes[0]->actualiser_trains();
 
+}
+
+pair<float,float> Metro::getCoordTrain(int i, int j) const
+{
+    lignes[i]->getCoordTrain(j);
+}
+
+int Metro::getNombreTrain(int i) const
+{
+    lignes[i]->getNombreTrains();
 }

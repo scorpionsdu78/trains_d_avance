@@ -194,6 +194,10 @@ float distf(pair<float,float> g_a, pair<float,float> g_b)
 
 }
 
+std::pair<float,float> Train::getCoords() const
+{
+    return coords;
+}
 
 /*
 void test1(void)

@@ -47,6 +47,7 @@ int main()
     }
 
     vector<vector<sfLine>> affLigne(metro.getLignesSize());
+    vector<vector<sf::RectangleShape>> affTrains(metro.getLignesSize());
 
     sf::Color color;
     for (int i(0); i < metro.getLignesSize(); i++)
@@ -73,6 +74,14 @@ int main()
                                          color));
         }
 
+        for (int j(0); j < metro.getNombreTrain(i); j++)
+        {
+            affTrains[i].push_back(sf::RectangleShape(sf::Vector2f(20,10)));
+            affTrains[i][j].setFillColor(color);
+            affTrains[i][j].setOutlineThickness(3);
+            affTrains[i][j].setOutlineColor(sf::Color::Black);
+            affTrains[i][j].setOrigin(10.0, 5.0);
+        }
     }
 
     // Boucle principale
@@ -100,6 +109,15 @@ int main()
         for (int i(0); i < metro.getStationsSize(); i++)
         {
             window.draw(affStations[i]);
+        }
+
+        for (int i(0); i < metro.getLignesSize(); i++)
+        {
+            for (int j(0); j < metro.getNombreTrain(i); j++)
+            {
+                affTrains[i][j].setPosition(get<0>(metro.getCoordTrain(i, j)) * 40.0 + 20.0, get<1>(metro.getCoordTrain(i, j)) * 40.0 + 20.0);
+                window.draw(affTrains[i][j]);
+            }
         }
 
         // On affiche le contenu du buffer sur l'écran

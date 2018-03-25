@@ -66,3 +66,13 @@ void Ligne::actualiser_trains()
     for(i=0; i<trains.size(); i++)
         trains[i].actualiser_position();
 }
+
+int Ligne::getNombreTrains() const
+{
+    return trains.size();
+}
+
+pair<float,float> Ligne::getCoordTrain(int i) const
+{
+    return trains[i].getCoords();
+}

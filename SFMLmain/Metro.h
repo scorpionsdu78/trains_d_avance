@@ -47,6 +47,10 @@ class Metro
         int getInterLignesNbr(int i) const;
         // renvoie les coordonnées de la Gare à la position j dans la Ligne numéro i
         std::pair<float,float> getGareLigneCoord(int i, int j) const;
+        // renvoie les coordonnées du train j dans la Ligne numéro i
+        std::pair<float,float> getCoordTrain(int i, int j) const;
+        // renvoie le nombre de trains dans la ligne i
+        int getNombreTrain(int i) const;
 
         void testtrain();
 };

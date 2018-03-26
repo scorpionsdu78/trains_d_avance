@@ -32,7 +32,7 @@ class Metro
         Metro(const char* file);
         ~Metro();
         // lister les lignes et leur garres
-        void presentation();
+        void presentation() const;
         // lancer la simulation
         void lancer();
 

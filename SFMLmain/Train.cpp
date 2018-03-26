@@ -8,10 +8,9 @@ using namespace std;
 pair<float,float> equation(Gare* garea, Gare* gareb);
 float distf(pair<float,float> g_a, pair<float,float> g_b);
 
-Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
+Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords, int _pos_ligne): position{_position}, ligne{_ligne}, coords{_coords}, pos_ligne(_pos_ligne)
 {
     nb_passager = 25;
-    pos_ligne = 0;
 
     transition = true;
 
@@ -40,7 +39,7 @@ void Train::init_tmp(Gare* origine, pair<float,float> _coords)
 
 }
 
-int Train::place_disponible()
+int Train::place_disponible() const
 {
     return 100 - nb_passager;
 }
@@ -112,7 +111,7 @@ void Train::passage_gare(Gare* gr)
     gr->recuperer_voyageur(tmp);
 }
 
-void Train::presentation()
+void Train::presentation() const
 {
     cout << "je suis sur la ligne " << endl;
     ligne->nom();

@@ -158,12 +158,12 @@ Ligne* Metro::new_ligne(string data)
 
     for(int i = 0; i < nb_train; i++)
     {
-        new_l->ajout_train(Train(stations_ligne[0],new_l,stations_ligne[0]->get_coords()));
+        new_l->ajout_train(Train(stations_ligne[0],new_l,stations_ligne[0]->get_coords(), i));
     }
     return new_l;
 }
 
-void Metro::presentation()
+void Metro::presentation() const
 {
     for(size_t i = 0; i < lignes.size(); i++)
     {
@@ -198,22 +198,6 @@ pair<float,float> Metro::getGareLigneCoord(int i, int j) const
 
 void Metro::testtrain()
 {
-    /*//lignes[0]->presentation();
-
-    lignes[0]->actualiser_trains();
-
-    lignes[1]->actualiser_trains();
-
-    lignes[2]->actualiser_trains();
-
-    //lignes[0]->actualiser_trains();
-
-    //lignes[0]->actualiser_trains();
-
-    /*lignes[0]->actualiser_trains();
-
-    lignes[0]->actualiser_trains();*/
-
 	for(size_t i = 0; i < lignes.size(); i++)
 	{
 		lignes[i]->actualiser_trains();

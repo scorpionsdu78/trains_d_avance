@@ -36,7 +36,7 @@ int main()
 
     cout << "Bye train d'avance !" << endl;
 
-    bool pause(true);
+    bool pause(false);
 
     // Un tableau d'hexagones qui représentent les gares, placés grâce aux coords des Gares
     sf::CircleShape affStations[metro.getStationsSize()];

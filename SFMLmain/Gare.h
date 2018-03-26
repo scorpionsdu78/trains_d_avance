@@ -21,7 +21,7 @@ public:
     ~Gare();
     void recuperer_voyageur(int nombre);
     int donner_voyageur(Train* tr);
-    int nb_voyageur();
+    int nb_voyageur() const;
     void liberer_voyageur();
     void nouv_voyageur();
     void presentation() const;

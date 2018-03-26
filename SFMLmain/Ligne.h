@@ -18,8 +18,8 @@ public:
 	void actualiser_trains();
 	void presentation();
     void ajout_train(Train tr);
-    Gare* find_gare(int i);
-    void nom();
+    Gare* find_gare(int i) const;
+    void nom() const;
     int getNombreLignes() const;
     std::pair<float,float> getCoordGare(int i) const;
     int getNombreTrains() const;

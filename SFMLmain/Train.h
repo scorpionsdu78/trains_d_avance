@@ -15,14 +15,14 @@ class Ligne;
 class Train
 {
 public:
-	Train(Gare* _position, Ligne* _ligne,std::pair<float,float> _coords);
+	Train(Gare* _position, Ligne* _ligne,std::pair<float,float> _coords, int pos_ligne);
 	~Train();
 	int donner_voyageur(Gare* gr);
 	void recuperer_voyageur(Gare* gr);
 	void actualiser_position();
-	int place_disponible();
+	int place_disponible() const;
 	void passage_gare(Gare* gr);
-	void presentation();
+	void presentation() const;
     void init_tmp(Gare* origine, std::pair<float,float> coords);
 
     std::pair<float,float> getCoords() const;

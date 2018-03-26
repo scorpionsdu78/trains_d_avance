@@ -76,7 +76,7 @@ int Gare::donner_voyageur(Train* tr)
 
 }
 
-int Gare::nb_voyageur()
+int Gare::nb_voyageur() const
 {
     return voyageurs;
 }

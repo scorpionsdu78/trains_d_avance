@@ -19,6 +19,7 @@ int main()
 
     // Initialise une fenêtre de taille 800x600
     sf::RenderWindow window(sf::VideoMode(700, 700), "Un train d'avance", sf::Style::Default, settings);
+    window.setFramerateLimit(25);
 
     cout << "Hello train d'avance !" << endl << endl;
     srand(time(nullptr));
@@ -104,10 +105,12 @@ int main()
             {
                 if (event.key.code == sf::Keyboard::L)
                 {
-                    metro.testtrain();
+                    //metro.testtrain();
                 }
             }
         }
+
+        metro.testtrain();
 
         // Nettoie le contenu de l'écran
         window.clear(sf::Color::White);

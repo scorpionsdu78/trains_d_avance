@@ -206,12 +206,12 @@ void Train::actualiser_position()
 
         if(signe)
         {
-            coords.second = (coords.second  + 0.07);
+            coords.second = (coords.second  + 0.1);
         }
 
         else if(!signe)
         {
-            coords.second = coords.second - 0.07;
+            coords.second = coords.second - 0.1;
         }
 
 

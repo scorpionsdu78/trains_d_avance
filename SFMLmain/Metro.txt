@@ -2,10 +2,10 @@ g 12
 Carratos 1 14
 Khomm 2 3
 Bogman 10 16
-Arkania 8 13
+Arkania 7 13
 Alderaan 8 9
-Nubia 8 5
-Devaran 10 1
+Nubia 10 5
+Devaran 11 1
 Aquaris 15 15
 Chazwa 12 12
 Fang 5 6

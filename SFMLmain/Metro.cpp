@@ -202,6 +202,10 @@ void Metro::testtrain()
 
     lignes[0]->actualiser_trains();
 
+    lignes[1]->actualiser_trains();
+
+    lignes[2]->actualiser_trains();
+
     //lignes[0]->actualiser_trains();
 
     //lignes[0]->actualiser_trains();

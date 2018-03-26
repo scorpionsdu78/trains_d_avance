@@ -1,5 +1,5 @@
 CXXC=g++ -g -fsanitize=address -lsfml-graphics -lsfml-window -lsfml-system
-CXXFLAGS= -std=c++14 -W -Wall -Wextra -Werror -Wfatal-errors #-Weffc++
+CXXFLAGS= -std=c++14 -W -Wall -Wextra -Wfatal-errors # -Werror #-Weffc++
 LDFLAGS=
 EXEC=main
 SRC= $(wildcard *.cpp)

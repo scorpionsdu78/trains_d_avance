@@ -47,6 +47,7 @@ int Train::place_disponible()
 
 void Train::recuperer_voyageur(Gare* gr)
 {
+    (void)gr;
     int tmp;
 
     tmp = gr->donner_voyageur(this);
@@ -57,6 +58,7 @@ void Train::recuperer_voyageur(Gare* gr)
 
 void Train::donner_voyageur(Gare* gr)
 {
+    (void)gr;
    /* int frequentation;
     int deversement;
     int don;
@@ -95,7 +97,6 @@ void Train::donner_voyageur(Gare* gr)
 
 void Train::passage_gare(Gare* gr)
 {
-    int tmp;
 
     gr->presentation();
 

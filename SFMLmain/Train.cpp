@@ -104,13 +104,13 @@ void Train::actualiser_position()
     pair<float,float> coor_dest;
     Gare* gare_b =nullptr;
 
-    if(sens_logique == true)
+    /*if(sens_logique == true)
         gare_b = ligne->find_gare(pos_ligne+1);
 
     else if (sens_logique == false)
-        gare_b = ligne->find_gare(pos_ligne-1);
+        gare_b = ligne->find_gare(pos_ligne-1);*/
 
-
+    gare_b = ligne->find_gare(pos_ligne+1);
 
     coor_dest = gare_b->get_coords();
 
@@ -167,7 +167,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
+            /*if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
                 sens_logique = false;
 
             else if ((pos_ligne - 1)< 0)
@@ -177,7 +177,9 @@ void Train::actualiser_position()
                 pos_ligne++;
 
             else if (sens_logique == false)
-                pos_ligne--;
+                pos_ligne--;*/
+
+            pos_ligne++;
         }
 
     }
@@ -217,7 +219,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreLignes())
+            /*if ((pos_ligne + 1)>= ligne->getNombreLignes())
                 sens_logique = false;
 
             else if ((pos_ligne - 1)<= 0)
@@ -227,7 +229,9 @@ void Train::actualiser_position()
                 pos_ligne++;
 
             else if (sens_logique == false)
-                pos_ligne--;
+                pos_ligne--;*/
+
+            pos_ligne++;
         }
 
 

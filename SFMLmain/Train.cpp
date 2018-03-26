@@ -143,14 +143,14 @@ void Train::actualiser_position()
         if(signe)
         {
 
-            coords.first = coords.first +1;
+            coords.first = coords.first + 0.1;
             coords.second = (coords.first * a) + b;
         }
 
         else if(!signe)
         {
 
-            coords.first = coords.first - 1;
+            coords.first = coords.first - 0.1;
             coords.second = (coords.first * a)+b;
         }
 
@@ -197,12 +197,12 @@ void Train::actualiser_position()
 
         if(signe)
         {
-            coords.second = (coords.second  + 1);
+            coords.second = (coords.second  + 0.07);
         }
 
         else if(!signe)
         {
-            coords.second = coords.second - 1;
+            coords.second = coords.second - 0.07;
         }
 
 
@@ -280,8 +280,8 @@ pair<float,float> Train::getCoords() const
 
 void Train::init_transport()
 {
-    Gare* gare_a = ligne->find_gare(pos_ligne);
-    Gare* gare_b = ligne->find_gare(pos_ligne+1);
+    Gare* gare_a = ligne->find_gare(pos_ligne);     // vecteur sur une gare a qui représente la gare de départ
+    Gare* gare_b = ligne->find_gare(pos_ligne+1);   // vecteur sur une gare qui représente la gare d'arrivée
     pair<float,float>* tmp;
     pair<float,float> coor_dest;
 

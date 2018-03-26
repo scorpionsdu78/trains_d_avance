@@ -33,9 +33,9 @@ private:
 
 	int nb_passager;
 
-	int pos_ligne;
+	int pos_ligne;      // L'indice dans le vector de gare de [ligne] de la dernière gare où s'est trouvé le train
 
-    bool transition;
+    bool transition;    // variable qui indique si on doit repasser par une initialisation de la fonctin d'acualisation
 
     bool sens_logique;
 
@@ -47,11 +47,11 @@ private:
 
     float dist;
 
-	Gare* position;
+	Gare* position;     // INUTILE
 
-	Ligne* ligne;
+	Ligne* ligne;       // Pointeur sur la ligne sur laquelle se trouve le train
 
-	std::pair<float,float> coords;
+	std::pair<float,float> coords;  // Les coordonnées absolue du train sur le plan de taille 16x16
 
 	void init_transport();
 

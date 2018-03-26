@@ -47,12 +47,6 @@ int main()
         affStations[i].setOutlineThickness(-6);
         affStations[i].setOutlineColor(sf::Color::Black);
         affStations[i].setPosition(get<0>(metro.getCoordAff(i)) * 40.0, get<1>(metro.getCoordAff(i)) * 40.0);
-
-        for (int j(0); j < 100; j++)
-        {
-            affVoyageurs[i].push_back(sf::CircleShape(4.5, 60));
-            affVoyageurs[i][j].setFillColor(sf::Color::Black);
-        }
     }
 
     vector<vector<sfLine>> affLigne(metro.getLignesSize());
@@ -128,6 +122,9 @@ int main()
             window.draw(affStations[i]);
             for (int j(0); j < metro.getNombreVoyageursGare(i) / 5; j++)
             {
+                affVoyageurs[i].push_back(sf::CircleShape(4.5, 60));
+                affVoyageurs[i][j].setFillColor(sf::Color::Black);
+
                 if (j > 11)
                     affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 75.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);
                 else if (j > 7)
@@ -152,6 +149,11 @@ int main()
 
         // On affiche le contenu du buffer sur l'écran
         window.display();
+
+        for (int i(0); i < metro.getStationsSize(); i++)
+        {
+            affVoyageurs[i].clear();
+        }
     }
 
     return 0;

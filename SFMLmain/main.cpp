@@ -48,7 +48,7 @@ int main()
         affStations[i].setOutlineColor(sf::Color::Black);
         affStations[i].setPosition(get<0>(metro.getCoordAff(i)) * 40.0, get<1>(metro.getCoordAff(i)) * 40.0);
 
-        for (int j(0); j < (metro.getNombreVoyageursGare(i) / 5); j++)
+        for (int j(0); j < 100; j++)
         {
             affVoyageurs[i].push_back(sf::CircleShape(4.5, 60));
             affVoyageurs[i][j].setFillColor(sf::Color::Black);
@@ -128,7 +128,9 @@ int main()
             window.draw(affStations[i]);
             for (int j(0); j < metro.getNombreVoyageursGare(i) / 5; j++)
             {
-                if (j > 7)
+                if (j > 11)
+                    affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 75.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);
+                else if (j > 7)
                     affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 65.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);
                 else if (j > 3)
                     affVoyageurs[i][j].setPosition(get<0>(metro.getCoordAff(i)) * 40.0 + 55.0, get<1>(metro.getCoordAff(i)) * 40.0 + (j % 4) * 10.0);

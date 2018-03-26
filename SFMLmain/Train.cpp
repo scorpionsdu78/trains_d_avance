@@ -57,7 +57,7 @@ void Train::recuperer_voyageur(Gare* gr)
 
 int Train::donner_voyageur(Gare* gr)
 {
-    /*int frequentation;
+    int frequentation;
     int deversement;
     int don;
 
@@ -73,9 +73,9 @@ int Train::donner_voyageur(Gare* gr)
 
     cout << "fréquentation= " << frequentation << " deversement = " << deversement << "don= " << don << endl;
 
-    nb_passager -= don;*/
+    nb_passager -= don;
 
-    int don;
+    /*int don;
 
     don = 10;
 
@@ -89,7 +89,7 @@ int Train::donner_voyageur(Gare* gr)
     else
         nb_passager -= don;
 
-    return don;
+    return don;*/
 
 }
 

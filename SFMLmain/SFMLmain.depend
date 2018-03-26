@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1522002218 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
+1522062834 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<ctime>
@@ -397,23 +397,23 @@
 	<string>
 	<vector>
 
-1521983945 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.h
+1522002365 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.h
 	<string>
 	<vector>
 	<utility>
 	"Train.h"
 
-1521994896 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.h
+1522058464 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.h
 	<utility>
 	<cstdlib>
 	"Gare.h"
 	"Ligne.h"
 
-1522000261 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.h
+1522056334 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.h
 	<vector>
 	"Train.h"
 
-1522000962 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.h
+1522010679 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
@@ -563,11 +563,11 @@
 	<iostream>
 	<cmath>
 
-1521983945 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.cpp
+1522062914 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"
 	<iostream>
 
-1522000333 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.cpp
+1522058519 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\ligne.cpp
 	<iostream>
 	"Ligne.h"
 
@@ -576,12 +576,12 @@
 
 1521477221 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\passager.h
 
-1521994932 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.cpp
+1522062898 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
 	<iostream>
 	<cmath>
 
-1522001012 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.cpp
+1522061526 source:c:\users\vivague\documents\github\trains_d_avance\sfmlmain\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>
@@ -980,7 +980,8 @@
 	<string>
 	<vector>
 
-1521993687 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\sfline.h
+1522061526 c:\users\vivague\documents\github\trains_d_avance\sfmlmain\sfline.h
+	<cmath>
 
 1521971231 d:\francois-home\documents\github\trains_d_avance\sfmlmain\sfml-2.4.2\include\sfml\graphics.hpp
 	<SFML/Window.hpp>

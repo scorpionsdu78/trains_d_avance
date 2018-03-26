@@ -66,9 +66,13 @@ int main()
             case 2:
                 color = sf::Color::Yellow;
                 break;
-            case 4:
+            case 3:
                 color = sf::Color::Blue;
                 break;
+            case 4:
+                color = sf::Color::Magenta;
+                break;
+
         }
         for (int j(0); j < metro.getInterLignesNbr(i); j++)
         {

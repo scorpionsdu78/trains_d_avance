@@ -1,6 +1,8 @@
 #ifndef SFLINE_H_INCLUDED
 #define SFLINE_H_INCLUDED
 
+#include <cmath>
+
 class sfLine : public sf::Drawable
 {
 public:

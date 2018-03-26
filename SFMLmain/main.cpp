@@ -36,6 +36,8 @@ int main()
 
     cout << "Bye train d'avance !" << endl;
 
+    bool pause(true);
+
     // Un tableau d'hexagones qui représentent les gares, placés grâce aux coords des Gares
     sf::CircleShape affStations[metro.getStationsSize()];
     vector<vector<sf::CircleShape>> affVoyageurs(metro.getStationsSize());
@@ -101,16 +103,21 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
 
-            if (event.type == sf::Event::KeyPressed)
+            if (event.type == sf::Event::KeyReleased)
             {
-                if (event.key.code == sf::Keyboard::L)
+                if (event.key.code == sf::Keyboard::P)
                 {
-                    //metro.testtrain();
+                    pause = !pause;
+                }
+                if (event.key.code == sf::Keyboard::Escape)
+                {
+                    window.close();
                 }
             }
         }
 
-        metro.testtrain();
+        if (!pause)
+            metro.testtrain();
 
         // Nettoie le contenu de l'écran
         window.clear(sf::Color::White);

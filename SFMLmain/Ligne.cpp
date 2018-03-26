@@ -43,7 +43,6 @@ void Ligne::presentation()
 
 Gare* Ligne::find_gare(int i)
 {
-
     return stations_lst[i];
 
 }

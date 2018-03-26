@@ -114,12 +114,12 @@ void Train::actualiser_position()
 
     coor_dest = gare_b->get_coords();
 
-    cout << "transition = " << transition << endl;
-    cout << "sens_logique =" << sens_logique<< endl;
+   // cout << "transition = " << transition << endl;
+   // cout << "sens_logique =" << sens_logique<< endl;
 
 
-    cout << "depart ( " << coords.first << " ; " << coords.second << " )"<<endl;
-    cout << "arriver ( " << coor_dest.first << " ; " << coor_dest.second << " )"<<endl;
+  //  cout << "depart ( " << coords.first << " ; " << coords.second << " )"<<endl;
+  //  cout << "arriver ( " << coor_dest.first << " ; " << coor_dest.second << " )"<<endl;
 
     if(transition == true)
     {
@@ -159,7 +159,7 @@ void Train::actualiser_position()
 
         cout << "dist =" << dist << endl;
 
-        if (dist<0.01)
+        if (dist<0.1)
         {
 
             transition=true;
@@ -168,11 +168,6 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreGare())
-                sens_logique = false;
-
-            else if ((pos_ligne - 1)< 0)
-                sens_logique =true;
 
             if(sens_logique == true)
                 pos_ligne++;
@@ -180,6 +175,17 @@ void Train::actualiser_position()
             else if (sens_logique == false)
                 pos_ligne--;
 
+            cout << "### DEBUG\n";
+            cout << pos_ligne << endl;
+            cout << ligne->getNombreGare() << endl;
+            if ((pos_ligne + 1)>= ligne->getNombreGare())
+            {
+                cout << "### FALSE ###\n";
+                sens_logique = false;
+            }
+
+            else if ((pos_ligne - 1)< 0)
+                sens_logique =true;
 
         }
 
@@ -211,7 +217,7 @@ void Train::actualiser_position()
 
         dist = distf(coords,coor_dest);
 
-        if (dist<0.01)
+        if (dist<0.1)
         {
 
             transition=true;
@@ -220,17 +226,21 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreGare())
-                sens_logique = false;
-
-            else if ((pos_ligne - 1)<= 0)
-                sens_logique =true;
-
             if(sens_logique == true)
                 pos_ligne++;
 
             else if (sens_logique == false)
                 pos_ligne--;
+
+            cout << "### DEBUG\n";
+            cout << pos_ligne << endl;
+            cout << ligne->getNombreGare() << endl;
+
+            if ((pos_ligne + 1)>= ligne->getNombreGare())
+                sens_logique = false;
+
+            else if ((pos_ligne - 1)<= 0)
+                sens_logique =true;
 
 
         }
@@ -264,7 +274,7 @@ pair<float,float>* equation(Gare* garea, Gare* gareb)
 
 float distf(pair<float,float> g_a, pair<float,float> g_b)
 {
-    int xa,xb,ya,yb;
+    float xa,xb,ya,yb;
     float r;
 
     xa=g_a.first;

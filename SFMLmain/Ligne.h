@@ -24,6 +24,7 @@ public:
     std::pair<float,float> getCoordGare(int i) const;
     int getNombreTrains() const;
     std::pair<float,float> getCoordTrain(int i) const;
+    int getNombreGare() const;
 
 private:
 

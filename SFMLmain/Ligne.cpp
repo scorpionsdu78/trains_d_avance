@@ -18,6 +18,10 @@ void Ligne::ajout_train(Train tr)
     trains.push_back(tr);
 }
 
+int Ligne::getNombreGare() const
+{
+    return stations_lst.size();
+}
 
 void Ligne::presentation()
 {

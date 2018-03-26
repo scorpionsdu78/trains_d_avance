@@ -110,11 +110,12 @@ void Train::actualiser_position()
     else if (sens_logique == false)
         gare_b = ligne->find_gare(pos_ligne-1);
 
-    gare_b = ligne->find_gare(pos_ligne+1);
+
 
     coor_dest = gare_b->get_coords();
 
     cout << "transition = " << transition << endl;
+    cout << "sens_logique =" << sens_logique<< endl;
 
 
     cout << "depart ( " << coords.first << " ; " << coords.second << " )"<<endl;
@@ -158,7 +159,7 @@ void Train::actualiser_position()
 
         cout << "dist =" << dist << endl;
 
-        if (dist<0.005)
+        if (dist<0.01)
         {
 
             transition=true;
@@ -167,7 +168,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
+            if ((pos_ligne + 1)>= ligne->getNombreGare())
                 sens_logique = false;
 
             else if ((pos_ligne - 1)< 0)
@@ -210,7 +211,7 @@ void Train::actualiser_position()
 
         dist = distf(coords,coor_dest);
 
-        if (dist<0.005)
+        if (dist<0.01)
         {
 
             transition=true;
@@ -219,7 +220,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            if ((pos_ligne + 1)>= ligne->getNombreLignes())
+            if ((pos_ligne + 1)>= ligne->getNombreGare())
                 sens_logique = false;
 
             else if ((pos_ligne - 1)<= 0)

@@ -198,7 +198,7 @@ pair<float,float> Metro::getGareLigneCoord(int i, int j) const
 
 void Metro::testtrain()
 {
-    //lignes[0]->presentation();
+    /*//lignes[0]->presentation();
 
     lignes[0]->actualiser_trains();
 
@@ -213,6 +213,11 @@ void Metro::testtrain()
     /*lignes[0]->actualiser_trains();
 
     lignes[0]->actualiser_trains();*/
+
+	for(size_t i = 0; i < lignes.size(); i++)
+	{
+		lignes[i]->actualiser_trains();
+	}
 }
 
 pair<float,float> Metro::getCoordTrain(int i, int j) const

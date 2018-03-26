@@ -20,7 +20,7 @@ Gare* find_stations(const std::vector<Gare*> &gares, std::string name)
 Gare::Gare(string _nom, pair<float,float> _coords)
 {
     nom = _nom;
-    voyageurs = 15;
+    voyageurs = 25;
     coords = _coords;
 
     freq = 80;

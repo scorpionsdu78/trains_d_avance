@@ -47,7 +47,7 @@ int Train::place_disponible()
 
 void Train::recuperer_voyageur(Gare* gr)
 {
-    (void)gr;
+    //(void)gr;
     int tmp;
 
     tmp = gr->donner_voyageur(this);
@@ -56,10 +56,11 @@ void Train::recuperer_voyageur(Gare* gr)
 
 }
 
-void Train::donner_voyageur(Gare* gr)
+int Train::donner_voyageur(Gare* gr)
 {
-    (void)gr;
-   /* int frequentation;
+    //(void)gr;
+
+    int frequentation;
     int deversement;
     int don;
 
@@ -75,9 +76,9 @@ void Train::donner_voyageur(Gare* gr)
 
     cout << "fréquentation= " << frequentation << " deversement = " << deversement << "don= " << don << endl;
 
-    nb_passager -= don;*/
+    nb_passager -= don;
 
-    int don;
+    /*int don;
 
     don = 10;
 
@@ -89,9 +90,9 @@ void Train::donner_voyageur(Gare* gr)
     }
 
     else
-        nb_passager -= don;
+        nb_passager -= don;*/
 
-    //return don;
+    return don;
 
 }
 
@@ -102,13 +103,13 @@ void Train::passage_gare(Gare* gr)
 
     presentation();
 
-    donner_voyageur(gr);
+    int tmp(donner_voyageur(gr));
 
     recuperer_voyageur(gr);
 
     presentation();
 
-    //gr->recuperer_voyageur(5);
+    gr->recuperer_voyageur(tmp);
 }
 
 void Train::presentation()

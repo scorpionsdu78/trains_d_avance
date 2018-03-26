@@ -46,8 +46,8 @@ void Gare::recuperer_voyageur(int nombre)
 
 int Gare::donner_voyageur(Train* tr)
 {
-    (void)tr;
-    /*int dispo=0;
+    //(void)tr;
+    int dispo=0;
     int don=0;
 
     dispo = tr->place_disponible();
@@ -59,9 +59,9 @@ int Gare::donner_voyageur(Train* tr)
         don = dispo;
 
     voyageurs = voyageurs - don;
-    return don;*/
+    return don;
 
-    int don=5;
+    /*int don=5;
 
     if(voyageurs - don <= 0)
     {
@@ -72,7 +72,7 @@ int Gare::donner_voyageur(Train* tr)
     else
         voyageurs =- don;
 
-    return don;
+    return don;*/
 
 }
 

@@ -10,7 +10,7 @@ float distf(pair<float,float> g_a, pair<float,float> g_b);
 
 Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
 {
-    nb_passager = 0;
+    nb_passager = 25;
     pos_ligne = 0;
 
     transition = true;
@@ -57,7 +57,7 @@ void Train::recuperer_voyageur(Gare* gr)
 
 int Train::donner_voyageur(Gare* gr)
 {
-    int frequentation;
+    /*int frequentation;
     int deversement;
     int don;
 
@@ -73,7 +73,21 @@ int Train::donner_voyageur(Gare* gr)
 
     cout << "fréquentation= " << frequentation << " deversement = " << deversement << "don= " << don << endl;
 
-    nb_passager -= don;
+    nb_passager -= don;*/
+
+    int don;
+
+    don = 10;
+
+    cout << "don= " << don << endl;
+
+    if(nb_passager - don <=0)
+    {
+       nb_passager = 10;
+    }
+
+    else
+        nb_passager -= don;
 
     return don;
 
@@ -83,9 +97,15 @@ void Train::passage_gare(Gare* gr)
 {
     int tmp;
 
+    gr->presentation();
+
+    presentation();
+
     tmp=donner_voyageur(gr);
 
     recuperer_voyageur(gr);
+
+    presentation();
 
     gr->recuperer_voyageur(tmp);
 }
@@ -157,7 +177,7 @@ void Train::actualiser_position()
 
         dist = distf(coords,coor_dest);
 
-        cout << "dist =" << dist << endl;
+        //cout << "dist =" << dist << endl;
 
         if (dist<0.1)
         {
@@ -166,7 +186,7 @@ void Train::actualiser_position()
 
             coords = coor_dest;
 
-            //passage_gare(gare_b);
+            passage_gare(gare_b);
 
 
             if(sens_logique == true)
@@ -175,12 +195,12 @@ void Train::actualiser_position()
             else if (sens_logique == false)
                 pos_ligne--;
 
-            cout << "### DEBUG\n";
-            cout << pos_ligne << endl;
-            cout << ligne->getNombreGare() << endl;
+            //cout << "### DEBUG\n";
+            //cout << pos_ligne << endl;
+            //cout << ligne->getNombreGare() << endl;
             if ((pos_ligne + 1)>= ligne->getNombreGare())
             {
-                cout << "### FALSE ###\n";
+                //cout << "### FALSE ###\n";
                 sens_logique = false;
             }
 
@@ -232,9 +252,9 @@ void Train::actualiser_position()
             else if (sens_logique == false)
                 pos_ligne--;
 
-            cout << "### DEBUG\n";
-            cout << pos_ligne << endl;
-            cout << ligne->getNombreGare() << endl;
+            //cout << "### DEBUG\n";
+            //cout << pos_ligne << endl;
+            //cout << ligne->getNombreGare() << endl;
 
             if ((pos_ligne + 1)>= ligne->getNombreGare())
                 sens_logique = false;

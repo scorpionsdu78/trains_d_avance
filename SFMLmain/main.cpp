@@ -29,7 +29,7 @@ int main()
 
 //    test1();
 
-    metro.testtrain();
+    //metro.testtrain();
 
     //metro.lancer();
 
@@ -101,6 +101,14 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+
+            if (event.type == sf::Event::KeyReleased)
+            {
+                if (event.key.code == sf::Keyboard::L)
+                {
+                    metro.testtrain();
+                }
+            }
         }
 
         // Nettoie le contenu de l'écran

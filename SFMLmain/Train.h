@@ -17,7 +17,7 @@ class Train
 public:
 	Train(Gare* _position, Ligne* _ligne,std::pair<float,float> _coords);
 	~Train();
-	int donner_voyageur(Gare* gr);
+	void donner_voyageur(Gare* gr);
 	void recuperer_voyageur(Gare* gr);
 	void actualiser_position();
 	int place_disponible();

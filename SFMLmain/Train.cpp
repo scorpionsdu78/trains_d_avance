@@ -5,7 +5,7 @@
 
 using namespace std;
 
-pair<float,float>* equation(Gare* garea, Gare* gareb);
+pair<float,float> equation(Gare* garea, Gare* gareb);
 float distf(pair<float,float> g_a, pair<float,float> g_b);
 
 Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords): position{_position}, ligne{_ligne}, coords{_coords}
@@ -270,9 +270,9 @@ void Train::actualiser_position()
 
 }
 
-pair<float,float>* equation(Gare* garea, Gare* gareb)
+pair<float,float> equation(Gare* garea, Gare* gareb)
 {
-    pair<float,float>* r = new pair<float,float>;
+    pair<float,float> r;
 
     float xa,xb,ya,yb;
 
@@ -284,9 +284,9 @@ pair<float,float>* equation(Gare* garea, Gare* gareb)
     xb=g_b.first;
     yb=g_b.second;
 
-    r->first = (yb-ya)/(xb-xa);
+    r.first = (yb-ya)/(xb-xa);
 
-    r->second = distf(g_a,g_b);
+    r.second = distf(g_a,g_b);
 
     return r;
 
@@ -318,7 +318,7 @@ void Train::init_transport()
     Gare* gare_a = nullptr;
     Gare* gare_b = nullptr;
 
-    pair<float,float>* tmp;
+    pair<float,float> tmp;
     pair<float,float> coor_dest;
 
     if(sens_logique == true)
@@ -348,8 +348,8 @@ void Train::init_transport()
     gare_b->presentation();*/
 
     tmp = equation(gare_a,gare_b);
-    a = tmp->first;
-    dist = tmp->second;
+    a = tmp.first;
+    dist = tmp.second;
 
 
     b = coords.second - a * coords.first;

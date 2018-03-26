@@ -104,11 +104,11 @@ void Train::actualiser_position()
     pair<float,float> coor_dest;
     Gare* gare_b =nullptr;
 
-    /*if(sens_logique == true)
+    if(sens_logique == true)
         gare_b = ligne->find_gare(pos_ligne+1);
 
     else if (sens_logique == false)
-        gare_b = ligne->find_gare(pos_ligne-1);*/
+        gare_b = ligne->find_gare(pos_ligne-1);
 
     gare_b = ligne->find_gare(pos_ligne+1);
 
@@ -167,7 +167,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            /*if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
+            if ((pos_ligne + 1)>= ligne->getNombreLignes()-1)
                 sens_logique = false;
 
             else if ((pos_ligne - 1)< 0)
@@ -177,9 +177,9 @@ void Train::actualiser_position()
                 pos_ligne++;
 
             else if (sens_logique == false)
-                pos_ligne--;*/
+                pos_ligne--;
 
-            pos_ligne++;
+
         }
 
     }
@@ -219,7 +219,7 @@ void Train::actualiser_position()
 
             //passage_gare(gare_b);
 
-            /*if ((pos_ligne + 1)>= ligne->getNombreLignes())
+            if ((pos_ligne + 1)>= ligne->getNombreLignes())
                 sens_logique = false;
 
             else if ((pos_ligne - 1)<= 0)
@@ -229,9 +229,9 @@ void Train::actualiser_position()
                 pos_ligne++;
 
             else if (sens_logique == false)
-                pos_ligne--;*/
+                pos_ligne--;
 
-            pos_ligne++;
+
         }
 
 
@@ -284,11 +284,25 @@ pair<float,float> Train::getCoords() const
 
 void Train::init_transport()
 {
-    Gare* gare_a = ligne->find_gare(pos_ligne);     // vecteur sur une gare a qui représente la gare de départ
-    Gare* gare_b = ligne->find_gare(pos_ligne+1);   // vecteur sur une gare qui représente la gare d'arrivée
+    Gare* gare_a = nullptr;
+    Gare* gare_b = nullptr;
+
     pair<float,float>* tmp;
     pair<float,float> coor_dest;
 
+    if(sens_logique == true)
+    {
+
+        gare_a = ligne->find_gare(pos_ligne);     // vecteur sur une gare a qui représente la gare de départ
+        gare_b = ligne->find_gare(pos_ligne+1);   // vecteur sur une gare qui représente la gare d'arrivée
+    }
+
+    else if(sens_logique == false)
+    {
+
+        gare_a = ligne->find_gare(pos_ligne);     // vecteur sur une gare a qui représente la gare de départ
+        gare_b = ligne->find_gare(pos_ligne-1);   // vecteur sur une gare qui représente la gare d'arrivée
+    }
 
     coor_dest = gare_b->get_coords();
     coords = gare_a->get_coords();

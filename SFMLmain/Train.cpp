@@ -120,8 +120,7 @@ void Train::presentation() const
 
 void Train::actualiser_position()
 {
-    int signe;
-    pair<float,float> old;
+
     pair<float,float> coor_dest;
     Gare* gare_b =nullptr;
 
@@ -135,12 +134,6 @@ void Train::actualiser_position()
 
     coor_dest = gare_b->get_coords();
 
-   // cout << "transition = " << transition << endl;
-   // cout << "sens_logique =" << sens_logique<< endl;
-
-
-  //  cout << "depart ( " << coords.first << " ; " << coords.second << " )"<<endl;
-  //  cout << "arriver ( " << coor_dest.first << " ; " << coor_dest.second << " )"<<endl;
 
     if(transition == true)
     {
@@ -152,63 +145,8 @@ void Train::actualiser_position()
     if(mode == 1 )
     {
 
-        if(coor_dest.first - coords.first > 0)
-            signe = 1;
+        transport_afine(coor_dest,gare_b);
 
-        else if(coor_dest.first - coords.first < 0)
-            signe = 0;
-
-
-        old.first = coords.first;
-        old.second = coords.second;
-
-        if(signe)
-        {
-
-            coords.first = coords.first + 0.1;
-            coords.second = (coords.first * a) + b;
-        }
-
-        else if(!signe)
-        {
-
-            coords.first = coords.first - 0.1;
-            coords.second = (coords.first * a)+b;
-        }
-
-        dist = distf(coords,coor_dest);
-
-        //cout << "dist =" << dist << endl;
-
-        if (dist<0.1)
-        {
-
-            transition=true;
-
-            coords = coor_dest;
-
-            passage_gare(gare_b);
-
-
-            if(sens_logique == true)
-                pos_ligne++;
-
-            else if (sens_logique == false)
-                pos_ligne--;
-
-            //cout << "### DEBUG\n";
-            //cout << pos_ligne << endl;
-            //cout << ligne->getNombreGare() << endl;
-            if ((pos_ligne + 1)>= ligne->getNombreGare())
-            {
-                //cout << "### FALSE ###\n";
-                sens_logique = false;
-            }
-
-            else if ((pos_ligne - 1)< 0)
-                sens_logique =true;
-
-        }
 
     }
 
@@ -216,56 +154,7 @@ void Train::actualiser_position()
     {
        // dist = distf(coor_dest,coords);
 
-        if(coor_dest.second - coords.second > 0)
-            signe = 1;
-
-        else if(coor_dest.second - coords.second < 0)
-            signe = 0;
-
-        old.first = coords.first;
-        old.second = coords.second;
-
-        if(signe)
-        {
-            coords.second = (coords.second  + 0.1);
-        }
-
-        else if(!signe)
-        {
-            coords.second = coords.second - 0.1;
-        }
-
-
-        dist = distf(coords,coor_dest);
-
-        if (dist<0.1)
-        {
-
-            transition=true;
-
-            coords = coor_dest;
-
-            //passage_gare(gare_b);
-
-            if(sens_logique == true)
-                pos_ligne++;
-
-            else if (sens_logique == false)
-                pos_ligne--;
-
-            //cout << "### DEBUG\n";
-            //cout << pos_ligne << endl;
-            //cout << ligne->getNombreGare() << endl;
-
-            if ((pos_ligne + 1)>= ligne->getNombreGare())
-                sens_logique = false;
-
-            else if ((pos_ligne - 1)<= 0)
-                sens_logique =true;
-
-
-        }
-
+        transport_vertical(coor_dest,gare_b);
 
     }
 
@@ -360,4 +249,126 @@ void Train::init_transport()
 }
 
 
+void Train::transport_afine(pair<float,float> coor_dest, Gare* gare_b)
+{
+    int signe;
+    pair<float,float> old;
+
+    if(coor_dest.first - coords.first > 0)
+        signe = 1;
+
+    else if(coor_dest.first - coords.first < 0)
+        signe = 0;
+
+
+    old.first = coords.first;
+    old.second = coords.second;
+
+    if(signe)
+    {
+
+        coords.first = coords.first + 0.1;
+        coords.second = (coords.first * a) + b;
+    }
+
+    else if(!signe)
+    {
+
+        coords.first = coords.first - 0.1;
+        coords.second = (coords.first * a)+b;
+    }
+
+    dist = distf(coords,coor_dest);
+
+    //cout << "dist =" << dist << endl;
+
+    if (dist<0.1)
+    {
+
+        transition=true;
+
+        coords = coor_dest;
+
+        passage_gare(gare_b);
+
+
+        if(sens_logique == true)
+            pos_ligne++;
+
+        else if (sens_logique == false)
+            pos_ligne--;
+
+        //cout << "### DEBUG\n";
+        //cout << pos_ligne << endl;
+        //cout << ligne->getNombreGare() << endl;
+        if ((pos_ligne + 1)>= ligne->getNombreGare())
+        {
+            //cout << "### FALSE ###\n";
+            sens_logique = false;
+        }
+
+        else if ((pos_ligne - 1)< 0)
+            sens_logique =true;
+
+    }
+
+
+}
+
+void Train::transport_vertical(pair<float,float> coor_dest, Gare* gare_b)
+{
+
+    int signe;
+    pair<float,float> old;
+
+    if(coor_dest.second - coords.second > 0)
+        signe = 1;
+
+    else if(coor_dest.second - coords.second < 0)
+        signe = 0;
+
+    old.first = coords.first;
+    old.second = coords.second;
+
+    if(signe)
+    {
+        coords.second = (coords.second  + 0.1);
+    }
+
+    else if(!signe)
+    {
+        coords.second = coords.second - 0.1;
+    }
+
+
+    dist = distf(coords,coor_dest);
+
+    if (dist<0.1)
+    {
+
+        transition=true;
+
+        coords = coor_dest;
+
+            //passage_gare(gare_b);
+
+        if(sens_logique == true)
+            pos_ligne++;
+
+        else if (sens_logique == false)
+            pos_ligne--;
+
+            //cout << "### DEBUG\n";
+            //cout << pos_ligne << endl;
+            //cout << ligne->getNombreGare() << endl;
+
+        if ((pos_ligne + 1)>= ligne->getNombreGare())
+            sens_logique = false;
+
+        else if ((pos_ligne - 1)<= 0)
+            sens_logique =true;
+
+
+    }
+}
 

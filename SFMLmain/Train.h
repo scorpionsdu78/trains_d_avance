@@ -55,6 +55,10 @@ private:
 
 	void init_transport();
 
+	void transport_afine(std::pair<float,float> coor_dest,Gare* gare_b);
+
+	void transport_vertical(std::pair<float,float> coor_dest, Gare* gare_b);
+
 
 
 };

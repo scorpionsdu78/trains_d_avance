@@ -21,18 +21,12 @@ int main()
     sf::RenderWindow window(sf::VideoMode(700, 700), "Un train d'avance", sf::Style::Default, settings);
     window.setFramerateLimit(25);
 
-    cout << "Hello train d'avance !" << endl << endl;
     srand(time(nullptr));
 
     cout << "Hello train d'avance !" << endl;
+
     Metro metro("Metro.txt");
     metro.presentation();
-
-//    test1();
-
-    //metro.testtrain();
-
-    //metro.lancer();
 
     cout << "Bye train d'avance !" << endl;
 
@@ -117,7 +111,7 @@ int main()
         }
 
         if (!pause)
-            metro.testtrain();
+            metro.update();
 
         // Nettoie le contenu de l'écran
         window.clear(sf::Color::White);

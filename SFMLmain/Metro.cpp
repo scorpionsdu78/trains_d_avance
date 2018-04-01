@@ -196,7 +196,7 @@ pair<float,float> Metro::getGareLigneCoord(int i, int j) const
     return lignes[i]->getCoordGare(j);
 }
 
-void Metro::testtrain()
+void Metro::update()
 {
 	for(size_t i = 0; i < lignes.size(); i++)
 	{
@@ -212,25 +212,6 @@ pair<float,float> Metro::getCoordTrain(int i, int j) const
 int Metro::getNombreTrain(int i) const
 {
     return lignes[i]->getNombreTrains();
-}
-
-void Metro::lancer()
-{
-
-   for(int i=0; i<15; i++)//a chaque itération du programme on actualise les trains de chaque ligne
-   {
-       lignes[0]->actualiser_trains();
-
-       lignes[1]->actualiser_trains();
-
-       lignes[2]->actualiser_trains();
-
-       for(unsigned int j=0; j<stations.size(); j++)//on donne de nouveuau voyageur a tte les gare
-       {
-           stations[j]->recuperer_voyageur(10);
-       }
-   }
-
 }
 
 int Metro::getNombreVoyageursGare(int i) const

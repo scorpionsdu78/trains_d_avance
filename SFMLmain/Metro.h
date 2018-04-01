@@ -34,7 +34,7 @@ class Metro
         // lister les lignes et leur garres
         void presentation() const;
         // lancer la simulation
-        void lancer();
+        void update();
 
         // renvoie la taille du vector de Gare*
         int getStationsSize() const;
@@ -54,8 +54,6 @@ class Metro
 
         // renvoie le nombre de voyageurs de la Gare i
         int getNombreVoyageursGare(int i) const;
-
-        void testtrain();
 };
 
 // Affiche un message d'erreur et quitte

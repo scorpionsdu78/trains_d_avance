@@ -53,6 +53,8 @@
 		<Unit filename="Passager.h" />
 		<Unit filename="Train.cpp" />
 		<Unit filename="Train.h" />
+		<Unit filename="fonction.cpp" />
+		<Unit filename="fonction.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="sfLine.h" />
 		<Extensions>

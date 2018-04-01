@@ -504,31 +504,31 @@
 	<iostream>
 	<cmath>
 
-1522063650 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.cpp
+1522085351 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.cpp
 	"Gare.h"
 	<iostream>
 
-1521995961 d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.h
+1522085351 d:\francois-home\documents\github\trains_d_avance\sfmlmain\gare.h
 	<string>
 	<vector>
 	<utility>
 	"Train.h"
 
-1522063530 d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.h
+1522605101 d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.h
 	<utility>
 	<cstdlib>
 	"Gare.h"
 	"Ligne.h"
 
-1522058512 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\ligne.cpp
+1522085351 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\ligne.cpp
 	<iostream>
 	"Ligne.h"
 
-1522056051 d:\francois-home\documents\github\trains_d_avance\sfmlmain\ligne.h
+1522085351 d:\francois-home\documents\github\trains_d_avance\sfmlmain\ligne.h
 	<vector>
 	"Train.h"
 
-1522063325 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\main.cpp
+1522600620 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<ctime>
@@ -538,11 +538,11 @@
 	"Train.h"
 	"sfLine.h"
 
-1522013785 d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.h
+1522600620 d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.h
 	<vector>
 	<string>
 
-1522062120 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.cpp
+1522600620 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\metro.cpp
 	"Metro.h"
 	<fstream>
 	<iostream>
@@ -558,8 +558,9 @@
 
 1521971230 d:\francois-home\documents\github\trains_d_avance\sfmlmain\passager.h
 
-1522063675 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.cpp
+1522602771 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\train.cpp
 	"Train.h"
+	"fonction.h"
 	<iostream>
 	<cmath>
 
@@ -1375,4 +1376,13 @@
 	<cmath>
 
 1522001776 c:\users\theo\documents\github\trains_d_avance\sfmlmain\sfline.h
+
+1522601292 source:d:\francois-home\documents\github\trains_d_avance\sfmlmain\fonction.cpp
+	"fonction.h"
+	<cmath>
+
+1522601244 d:\francois-home\documents\github\trains_d_avance\sfmlmain\fonction.h
+	<utility>
+	"Gare.h"
+	"Train.h"
 

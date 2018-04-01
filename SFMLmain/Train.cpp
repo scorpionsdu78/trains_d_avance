@@ -1,12 +1,10 @@
 #include "Train.h"
+#include "fonction.h"
 
 #include <iostream>
 #include <cmath>
 
 using namespace std;
-
-pair<float,float> equation(Gare* garea, Gare* gareb);
-float distf(pair<float,float> g_a, pair<float,float> g_b);
 
 Train::Train(Gare* _position, Ligne* _ligne, std::pair<float,float> _coords, int _pos_ligne): position{_position}, ligne{_ligne}, coords{_coords}, pos_ligne(_pos_ligne)
 {
@@ -29,19 +27,11 @@ Train::~Train()
 {
 }
 
-void Train::init_tmp(Gare* origine, pair<float,float> _coords)
-{
-    nb_passager = 60;
 
-    position = origine;
-
-    coords = _coords;
-
-}
 
 int Train::place_disponible() const
 {
-    return 100 - nb_passager;
+    return 100 - nb_passager; //on a 100 place par train, on retourne les 100 place moin le nombre de place prise
 }
 
 void Train::recuperer_voyageur(Gare* gr)
@@ -49,9 +39,9 @@ void Train::recuperer_voyageur(Gare* gr)
     //(void)gr;
     int tmp;
 
-    tmp = gr->donner_voyageur(this);
+    tmp = gr->donner_voyageur(this);//on demande a la gare combien de voayageur elle veut donner a ce trains
 
-    nb_passager += tmp;
+    nb_passager += tmp; //on incrémente le nombre de passager en fonction de voyageur donné par la gare
 
 }
 
@@ -63,52 +53,30 @@ int Train::donner_voyageur(Gare* gr)
     int deversement;
     int don;
 
-    frequentation = gr->ping_freq();
+    frequentation = gr->ping_freq();//on regarde la taux de fréquentation de la gare
 
     deversement = rand();
 
-    cout << "deversement1 = " << deversement << endl;
-
-    deversement = deversement % (frequentation - 10) + 10;
+    deversement = deversement % (frequentation - 10) + 10;//on calcule le nombre de personne d'éposé celons un pourcentage random comprix entre 10 et fréquentation
 
     don = (nb_passager * deversement)/100;
 
-    cout << "fréquentation= " << frequentation << " deversement = " << deversement << "don= " << don << endl;
+    nb_passager -= don;// on décrémente
 
-    nb_passager -= don;
 
-    /*int don;
-
-    don = 10;
-
-    cout << "don= " << don << endl;
-
-    if(nb_passager - don <=0)
-    {
-       nb_passager = 0;
-    }
-
-    else
-        nb_passager -= don;*/
-
-    return don;
+    return don;//on retourne le nombre de voyageur déposé
 
 }
 
 void Train::passage_gare(Gare* gr)
 {
 
-    gr->presentation();
+    int tmp(donner_voyageur(gr));//on initialise tmp avec la valeur de voyageur que le train donne a la gare
 
-    presentation();
+    recuperer_voyageur(gr);//on récupère les voaygeur de la gare
 
-    int tmp(donner_voyageur(gr));
 
-    recuperer_voyageur(gr);
-
-    presentation();
-
-    gr->recuperer_voyageur(tmp);
+    gr->recuperer_voyageur(tmp);// puis on les donne a la gare
 }
 
 void Train::presentation() const
@@ -124,77 +92,39 @@ void Train::actualiser_position()
     pair<float,float> coor_dest;
     Gare* gare_b =nullptr;
 
-    if(sens_logique == true)
-        gare_b = ligne->find_gare(pos_ligne+1);
+    if(sens_logique == true)//celons le sens de circulation du train
+        gare_b = ligne->find_gare(pos_ligne+1);//on choisit la gare de destination du trains
 
     else if (sens_logique == false)
-        gare_b = ligne->find_gare(pos_ligne-1);
+        gare_b = ligne->find_gare(pos_ligne-1);//de même ici
 
 
 
-    coor_dest = gare_b->get_coords();
+    coor_dest = gare_b->get_coords();//on prend les coordonner de la gare de destination
 
 
-    if(transition == true)
+    if(transition == true)//si on est sur un nouveau deplacement on reinitialise la deplacement
     {
-        init_transport();
+        init_transport();//on initialise la deplacement du trains
         transition = false;
     }
 
 
-    if(mode == 1 )
+    if(mode == 1 )//si la trajectoire est affine
     {
 
-        transport_afine(coor_dest,gare_b);
+        transport_afine(coor_dest,gare_b);//on appelle la fonction deplacement afine
 
 
     }
 
-    else if(mode == 2)
+    else if(mode == 2)//sinon
     {
        // dist = distf(coor_dest,coords);
 
-        transport_vertical(coor_dest,gare_b);
+        transport_vertical(coor_dest,gare_b);//on appelle la fonction deplacment verticale
 
     }
-
-}
-
-pair<float,float> equation(Gare* garea, Gare* gareb)
-{
-    pair<float,float> r;
-
-    float xa,xb,ya,yb;
-
-    pair<float,float> g_a = garea->get_coords();
-    pair<float,float> g_b = gareb->get_coords();
-
-    xa=g_a.first;
-    ya=g_a.second;
-    xb=g_b.first;
-    yb=g_b.second;
-
-    r.first = (yb-ya)/(xb-xa);
-
-    r.second = distf(g_a,g_b);
-
-    return r;
-
-}
-
-float distf(pair<float,float> g_a, pair<float,float> g_b)
-{
-    float xa,xb,ya,yb;
-    float r;
-
-    xa=g_a.first;
-    ya=g_a.second;
-    xb=g_b.first;
-    yb=g_b.second;
-
-    r = sqrt(pow((xb-xa),2)+pow((yb-ya),2));
-
-    return r;
 
 }
 
@@ -225,27 +155,23 @@ void Train::init_transport()
         gare_b = ligne->find_gare(pos_ligne-1);   // vecteur sur une gare qui représente la gare d'arrivée
     }
 
-    coor_dest = gare_b->get_coords();
-    coords = gare_a->get_coords();
+    coor_dest = gare_b->get_coords();//on récupère les coordonné de la estination
+    coords = gare_a->get_coords();//on récupère les coordonné de la gare de départ
 
-    if(coords.first != coor_dest.first )
+    if(coords.first != coor_dest.first )//on définie si c'est une droite afine
         mode=1;
 
-    else if (coords.first == coor_dest.first )
+    else if (coords.first == coor_dest.first )//on définie si c'est une droite verticale
         mode=2;
 
-    /*gare_a->presentation();
-    gare_b->presentation();*/
 
-    tmp = equation(gare_a,gare_b);
-    a = tmp.first;
-    dist = tmp.second;
+    tmp = equation(gare_a,gare_b);//on détermine le coef directeur de l'équation et la distance entre les gare
+    a = tmp.first;//on récupère le coef de l'équation
+    dist = tmp.second;//on récupère la distance
 
 
-    b = coords.second - a * coords.first;
+    b = coords.second - a * coords.first;//on établies la valeur de l'ordonné a l'origine
 
-    cout << "a= " << a << endl;
-    cout << "b= " << b << endl;
 }
 
 
@@ -254,54 +180,54 @@ void Train::transport_afine(pair<float,float> coor_dest, Gare* gare_b)
     int signe;
     pair<float,float> old;
 
-    if(coor_dest.first - coords.first > 0)
+    if(coor_dest.first - coords.first > 0)//on determine si on parcour la droite de manière croissante ou decroissante
         signe = 1;
 
     else if(coor_dest.first - coords.first < 0)
         signe = 0;
 
 
-    old.first = coords.first;
+    old.first = coords.first;//on copie les coordonné du départ pour les calcul de distance
     old.second = coords.second;
 
-    if(signe)
+    if(signe)// si le signe est positif on progresse de manière croissante
     {
 
         coords.first = coords.first + 0.1;
         coords.second = (coords.first * a) + b;
     }
 
-    else if(!signe)
+    else if(!signe)//sinon on décroit
     {
 
         coords.first = coords.first - 0.1;
         coords.second = (coords.first * a)+b;
     }
 
-    dist = distf(coords,coor_dest);
+    dist = distf(coords,coor_dest);//on reclacule la distance
 
     //cout << "dist =" << dist << endl;
 
-    if (dist<0.1)
+    if (dist<0.1)//et si on est suffisament proche de la gare
     {
 
         transition=true;
 
         coords = coor_dest;
 
-        passage_gare(gare_b);
+        passage_gare(gare_b);//on effectue le passage en gare
 
 
-        if(sens_logique == true)
-            pos_ligne++;
+        if(sens_logique == true)//si on avance dans le sens logique
+            pos_ligne++;//on incrémente le passage du train
 
-        else if (sens_logique == false)
-            pos_ligne--;
+        else if (sens_logique == false)//si on est dans le sens inverse
+            pos_ligne--;//on décrémente le passage du train
 
         //cout << "### DEBUG\n";
         //cout << pos_ligne << endl;
         //cout << ligne->getNombreGare() << endl;
-        if ((pos_ligne + 1)>= ligne->getNombreGare())
+        if ((pos_ligne + 1)>= ligne->getNombreGare())//on regarde pour faire demi tour
         {
             //cout << "### FALSE ###\n";
             sens_logique = false;
@@ -317,6 +243,8 @@ void Train::transport_afine(pair<float,float> coor_dest, Gare* gare_b)
 
 void Train::transport_vertical(pair<float,float> coor_dest, Gare* gare_b)
 {
+
+    //identique a la fonction précédente seul change les equation
 
     int signe;
     pair<float,float> old;

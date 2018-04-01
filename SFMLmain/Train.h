@@ -23,8 +23,6 @@ public:
 	int place_disponible() const;
 	void passage_gare(Gare* gr);
 	void presentation() const;
-    void init_tmp(Gare* origine, std::pair<float,float> coords);
-
     std::pair<float,float> getCoords() const;
 
 

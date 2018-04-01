@@ -25,8 +25,6 @@ class Metro
         // <id> <nb_train> <gare_1> <gare_2> ...
         Ligne* new_ligne(std::string data);
 
-
-
     public:
         // constructeur du métro. Prend un paramètre un chemin vers fichier
         Metro(const char* file);

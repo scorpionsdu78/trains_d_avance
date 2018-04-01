@@ -49,8 +49,6 @@
 		<Unit filename="Ligne.h" />
 		<Unit filename="Metro.cpp" />
 		<Unit filename="Metro.h" />
-		<Unit filename="Passager.cpp" />
-		<Unit filename="Passager.h" />
 		<Unit filename="Train.cpp" />
 		<Unit filename="Train.h" />
 		<Unit filename="fonction.cpp" />

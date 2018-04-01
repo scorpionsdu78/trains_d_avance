@@ -2,19 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="sfLine.h" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="980" topLine="0" />
-		</Cursor>
-	</File>
 	<File name="Ligne.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="966" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="Gare.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="560" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="Metro.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
@@ -22,14 +12,9 @@
 			<Cursor1 position="3522" topLine="137" />
 		</Cursor>
 	</File>
-	<File name="Passager.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Train.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="155" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="Metro.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1180" topLine="32" />
+			<Cursor1 position="496" topLine="14" />
 		</Cursor>
 	</File>
 	<File name="Ligne.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,34 +22,61 @@
 			<Cursor1 position="392" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="Gare.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Metro.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1239" topLine="53" />
+			<Cursor1 position="1180" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Passager.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="155" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="fonction.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="123" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="fonction.cpp" open="1" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="41" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Train.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4207" topLine="0" />
+			<Cursor1 position="6396" topLine="85" />
 		</Cursor>
 		<Folding>
-			<Collapse line="11" />
-			<Collapse line="28" />
+			<Collapse line="9" />
+			<Collapse line="26" />
 			<Collapse line="32" />
-			<Collapse line="42" />
-			<Collapse line="47" />
-			<Collapse line="58" />
-			<Collapse line="98" />
-			<Collapse line="114" />
+			<Collapse line="37" />
+			<Collapse line="48" />
+			<Collapse line="71" />
+			<Collapse line="82" />
+			<Collapse line="89" />
+			<Collapse line="131" />
+			<Collapse line="136" />
 		</Folding>
 	</File>
-	<File name="Train.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="sfLine.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="652" topLine="34" />
+			<Cursor1 position="980" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1566" topLine="33" />
+		</Cursor>
+	</File>
+	<File name="Gare.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1239" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="Gare.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="560" topLine="5" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
